@@ -6,7 +6,39 @@ title:  'Illustrations'
 <div class="row">
 
   <!-- START Sidebar -->
-  <div class="col-2">Menu</div>
+  <div class="col-2">
+    <h6 class="mb-3 fw-normal">Menu</h6>
+    <ul class="list-unstyled pb-4 border-bottom">
+      <a href="#" class="d-flex align-items-center pt-2 fw-normal text-dark">
+        <div class="bg-danger-subtle px-2 py-1 me-3 border rounded border-danger-subtle shadow-sm">
+          <i class="fa fa-image text-danger-emphasis fa-xs fa-fw"></i>
+        </div>
+        Illustrations
+      </a>
+
+      <a href="#" class="d-flex align-items-center pt-2 text-secondary">
+        <div class="bg-primary-subtle px-2 py-1 me-3 border rounded border-primary-subtle shadow-sm">
+          <i class="fa fa-code text-primary-emphasis fa-xs fa-fw"></i>
+        </div>
+        Github
+      </a>
+
+      <a href="#" class="d-flex align-items-center pt-2 text-secondary">
+        <div class="bg-success-subtle px-2 py-1 me-3 border rounded border-success-subtle shadow-sm">
+          <i class="fa fa-arrow-pointer text-success-emphasis fa-xs fa-fw"></i>
+        </div>
+        Figma
+      </a>
+
+      <a href="#"  class="d-flex align-items-center pt-2 text-secondary">
+        <div class="bg-warning-subtle px-2 py-1 me-3 border rounded border-warning-subtle shadow-sm">
+          <i class="fa fa-envelope text-warning-emphasis fa-xs fa-fw"></i>
+        </div>
+        Contact
+      </a>
+
+    </ul>
+  </div>
   <!-- END Sidebar -->
 
   <!-- START Right Content -->
@@ -57,7 +89,7 @@ title:  'Illustrations'
                   <div class="col-md-3 mb-4">
                     <div class="card shadow-sm">
                       <img src="{{ avatar.path }}" class="card-img-top h-25" alt="{{ filename | capitalize }}">
-                      <div class="card-body border-top ">
+                      <div class="card-body border-top">
                         <h6 class="card-title mb-1">
                           <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}-{{ category }}" class="link-dark fw-normal">
                             {{ filename | capitalize }}
