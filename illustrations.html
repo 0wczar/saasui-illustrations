@@ -2,66 +2,89 @@
 layout: page
 title:  'Illustrations'
 ---
- <!-- START Colections -->
-
+<!-- START PAGE -->
  <div class="row">
 
-    {% assign grouped_avatars = site.data.avatars | group_by: "category" %}
-    {% for category in grouped_avatars %}
-
-    <!-- START Category Header -->
-    <h2 class="my-4">
-      {{ category.name }} 
-      <small class="text-muted ms-2">
-        {{ category.items | size }}
-      </small>
-    </h2>
-    <!-- END Category Header -->
-
-    <div class="row">
-      {% for avatar in category.items %}
-      <!-- START Card -->
-      <div class="col-md-2 mb-4">
-        <div class="card">
-          <img src="{{ avatar.image }}" class="card-img-top h-25" alt="{{ avatar.title }}">
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}"> <!-- Unique ID for each modal -->
-                {{ avatar.title }}
-              </a>
-            </h5>
-            <p class="card-text">Tagi: {{ avatar.tags }}</p>
-            <p class="card-text">Kategoria: {{ avatar.category }}</p>
-          </div>
-        </div>
-      </div>
-        <!-- END Card -->
-
-        <!-- START Modal -->
-        <div class="modal fade" id="modal-{{ forloop.index }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel-{{ forloop.index }}">{{ avatar.title }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <img src="{{ avatar.image }}" class="img-fluid mb-3" alt="{{ avatar.title }}">
-                <p>Tagi: {{ avatar.tags }}</p>
-                <p>Kategoria: {{ avatar.category }}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END Modal -->
-
-
-        {% endfor %}
-      </div>
-      {% endfor %}
+     <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
+     {% assign categories = "" %}
+     {% for file in site.static_files %}
+       {% if file.path contains '/assets/avatars/' %}
+         {% assign path_parts = file.path | split: '/' %}
+         {% assign category_name = path_parts[3] %}
+         {% unless categories contains category_name %}
+           {% assign categories = categories | append: category_name | append: "," %}
+         {% endunless %}
+       {% endif %}
+     {% endfor %}
+     {% assign categories = categories | split: ',' | uniq %}
+ 
+     {% for category in categories %}
+       {% unless category == "" %}
+         <!-- START Category Header -->
+         <h2 class="my-4">
+           {{ category | capitalize }}
+           <small class="text-muted ms-2">
+             <!-- Zliczanie plików w danej kategorii -->
+             {% assign count = 0 %}
+             {% for avatar in site.static_files %}
+               {% assign avatar_parts = avatar.path | split: '/' %}
+               {% if avatar_parts[3] == category %}
+                 {% assign count = count | plus: 1 %}
+               {% endif %}
+             {% endfor %}
+             {{ count }}
+           </small>
+         </h2>
+         <!-- END Category Header -->
+ 
+         <div class="row">
+           <!-- Przechodzimy przez pliki w katalogu -->
+           {% for avatar in site.static_files %}
+             {% assign avatar_parts = avatar.path | split: '/' %}
+             {% if avatar_parts[3] == category %}
+               <!-- Wyodrębnij nazwę pliku bez rozszerzenia -->
+               {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
+ 
+               <!-- START Card -->
+               <div class="col-md-2 mb-4">
+                 <div class="card">
+                   <img src="{{ avatar.path }}" class="card-img-top h-25" alt="{{ filename | capitalize }}">
+                   <div class="card-body">
+                     <h5 class="card-title">
+                       <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}-{{ category }}">
+                         {{ filename | capitalize }}
+                       </a>
+                     </h5>
+                     <p class="card-text">Kategoria: {{ category | capitalize }}</p>
+                   </div>
+                 </div>
+               </div>
+               <!-- END Card -->
+ 
+               <!-- START Modal -->
+               <div class="modal fade" id="modal-{{ forloop.index }}-{{ category }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}-{{ category }}" aria-hidden="true">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="modalLabel-{{ forloop.index }}-{{ category }}">{{ filename | capitalize }}</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                       <img src="{{ avatar.path }}" class="img-fluid mb-3" alt="{{ filename | capitalize }}">
+                       <p>Kategoria: {{ category | capitalize }}</p>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <!-- END Modal -->
+             {% endif %}
+           {% endfor %}
+         </div>
+       {% endunless %}
+     {% endfor %}
 
 </div>
-<!-- END Colections -->
+<!-- END PAGE -->
