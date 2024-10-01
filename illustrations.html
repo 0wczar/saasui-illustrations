@@ -39,26 +39,28 @@ title:  'Illustrations'
 
     </ul>
 
-    <h6 class="mb-3 fw-normal">Categories</h6>
+    <h6>Categories</h6>
+    <ul class="list-unstyled">
+      {% assign categories = "" %}
+      {% for file in site.static_files %}
+        {% if file.path contains '/assets/avatars/' %}
+          {% assign path_parts = file.path | split: '/' %}
+          {% assign category_name = path_parts[3] | replace: ' ', '%20' %}
+          {% unless categories contains category_name %}
+            {% assign categories = categories | append: category_name | append: "," %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+      {% assign categories = categories | split: ',' | uniq %}
 
-    <ul class="list-unstyled pb-4 border-bottom ps-3">
-
-      <a href="#" class="d-flex align-items-center text-secondary">
-        Icons
-      </a>
-
-      <a href="#" class="d-flex align-items-center pt-1 text-secondary">
-        Buttons
-      </a>
-
-      <a href="#" class="d-flex align-items-center pt-1 text-secondary">
-        Skeletons
-      </a>
-
-      <a href="#web3" class="d-flex align-items-center pt-1 text-secondary">
-        Web3
-      </a>
-
+      <!-- Generowanie linków do kotwic -->
+      {% for category in categories %}
+        {% unless category == "" %}
+          <li>
+            <a href="#{{ category | replace: '%20', '-' }}" class="link-secondary">{{ category | replace: '%20', ' ' | capitalize }}</a>
+          </li>
+        {% endunless %}
+      {% endfor %}
 
     </ul>
   </div>
@@ -84,7 +86,7 @@ title:  'Illustrations'
         {% unless category == "" %}
 
           <!-- START Category Header -->
-          <h2 class="my-4 fw-normal">
+          <h2 class="my-4 fw-normal" id="{{ category | replace: '%20', '-' }}">
             {{ category | capitalize }}
             <small class="text-muted ms-2 fw-normal">
               {% assign count = 0 %}
