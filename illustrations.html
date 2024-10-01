@@ -1,0 +1,67 @@
+---
+layout: page
+title:  'Illustrations'
+---
+ <!-- START Colections -->
+
+ <div class="row">
+
+    {% assign grouped_avatars = site.data.avatars | group_by: "category" %}
+    {% for category in grouped_avatars %}
+
+    <!-- START Category Header -->
+    <h2 class="my-4">
+      {{ category.name }} 
+      <small class="text-muted ms-2">
+        {{ category.items | size }}
+      </small>
+    </h2>
+    <!-- END Category Header -->
+
+    <div class="row">
+      {% for avatar in category.items %}
+      <!-- START Card -->
+      <div class="col-md-2 mb-4">
+        <div class="card">
+          <img src="{{ avatar.image }}" class="card-img-top h-25" alt="{{ avatar.title }}">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}"> <!-- Unique ID for each modal -->
+                {{ avatar.title }}
+              </a>
+            </h5>
+            <p class="card-text">Tagi: {{ avatar.tags }}</p>
+            <p class="card-text">Kategoria: {{ avatar.category }}</p>
+          </div>
+        </div>
+      </div>
+        <!-- END Card -->
+
+        <!-- START Modal -->
+        <div class="modal fade" id="modal-{{ forloop.index }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel-{{ forloop.index }}">{{ avatar.title }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img src="{{ avatar.image }}" class="img-fluid mb-3" alt="{{ avatar.title }}">
+                <p>Tagi: {{ avatar.tags }}</p>
+                <p>Kategoria: {{ avatar.category }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Modal -->
+
+
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+</div>
+<!-- END Colections -->

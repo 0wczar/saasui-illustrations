@@ -1,0 +1,33 @@
+###########
+# site.url, site.title
+
+title: 'Airframe'
+
+## note: 
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
+path: /jekyll-bootstrap-theme
+url:  'http://henrythemes.github.io/jekyll-bootstrap-theme'
+
+
+########
+# more settings
+
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
+
+collections:
+  components:
+    output: true

@@ -1,0 +1,20 @@
+- title: "Tytuł 1"
+  tags: "Tag 1"
+  category: "Forms"
+  image: "/assets/avatars/1.jpg"
+
+- title: "Tytuł 2"
+  tags: "Tag 2"
+  category: "Buttons"
+  image: "/assets/avatars/2.jpg"
+
+- title: "Tytuł 2.1"
+  tags: "Tag 2"
+  category: "Buttons"
+  image: "/assets/avatars/2.jpg"
+  
+
+- title: "Tytuł 3"
+  tags: "Tag 3"
+  category: "Icons"
+  image: "/assets/avatars/3.jpg"

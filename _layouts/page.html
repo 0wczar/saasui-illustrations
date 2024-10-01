@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head data-bs-theme="light">
+		<meta charset="utf-8">
+		<title>{{ site.title }} - {{ page.title }}</title>
+
+		<!-- Font Awesome 6.x -->
+		<script src="https://kit.fontawesome.com/2b04deb584.js" crossorigin="anonymous"></script>
+
+		<!-- Generated from SCSS (Bootstrap 5.02 and saved as styles.css)-->
+		<link href="{{page.root}}/css/styles.css" rel="stylesheet">
+		<script type="module" src="{{page.root}}/js/color-modes.js"></script>
+
+		<!-- Google Fonts Roboto -->
+		<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" 
+		/>
+
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="{{page.root}}/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{page.root}}/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{page.root}}/favicon/favicon-16x16.png">
+		<link rel="manifest" href="{{page.root}}/favicon/site.webmanifest">
+		<meta name="msapplication-config" content="{{page.root}}/favicon/browserconfig.xml" />
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+
+	</head>
+
+	<body class="min-vh-100 p-4">
+		<div class="container-fluid">
+			{{ content }}
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="{{page.root}}/js/holder.min.js"></script>
+
+        <script>
+            function goBack() {
+              window.history.back();
+            }
+        </script>
+
+		<!-- initialize all tooltips on a page -->
+		<script>
+			var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+			var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl)
+			})
+		</script>
+	</body>
+
+</html>

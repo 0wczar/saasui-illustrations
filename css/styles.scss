@@ -1,0 +1,1682 @@
+---
+---
+
+
+// add bootstrap variable settings here
+@import 'custom';
+
+@import 'bootstrap';
+
+$facebook: #3A6094;
+$twitter: #61AEDA;
+$linkedin: #097EB1;
+$pinterest: #BC0223;
+$spotify: #3BD46A;
+
+.bg-facebook {
+  background-color: $facebook;
+}
+.text-facebook {
+  color: $facebook;
+}
+.bg-twitter {
+  background-color: $twitter;
+}
+.text-twitter {
+  color: $twitter;
+}
+.bg-linkedin {
+  background-color: $linkedin;
+}
+.text-linkedin {
+  color: $linkedin;
+}
+.bg-pinterest {
+  background-color: $pinterest;
+}
+.text-pinterest {
+  color: $pinterest;
+}
+.bg-spotify {
+  background-color: $spotify;
+}
+.text-spotify {
+  color: $spotify;
+}
+
+
+// START CHEATSHEET.CSS as .SCSS
+body {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Bootstrap "Journal code" icon
+ * @link https://icons.getbootstrap.com/icons/journal-code/
+ */
+
+/* Table of contents */
+.bd-aside a {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: .3125rem;
+  color: $body-color;
+  text-decoration: none;
+}
+
+.bd-aside a:hover,
+.bd-aside a:focus {
+  color: $dark;
+  background-color: $gray-200;
+}
+
+.bd-aside .active {
+  font-weight: 500;
+  color: $dark;
+}
+
+.bd-aside .btn {
+  padding: .25rem .5rem;
+  font-weight: 500;
+  color: $dark;
+  border: 0;
+}
+
+.bd-aside .btn:hover,
+.bd-aside .btn:focus {
+  color: $dark;
+  background-color: $gray-200;
+}
+
+.bd-aside .btn:focus {
+  box-shadow: 0 0 0 1px $gray-300;
+}
+
+.bd-aside .btn::before {
+  width: 1.25em;
+  line-height: 0;
+  transition: transform .35s ease;
+
+  /* rtl:raw:
+  transform: rotate(180deg) translateX(-2px);
+  */
+  transform-origin: .5em 50%;
+}
+
+.bd-aside .btn[aria-expanded="true"]::before {
+  transform: rotate(90deg)/* rtl:ignore */;
+}
+
+
+/* Examples */
+.scrollspy-example {
+  position: relative;
+  height: 200px;
+  margin-top: .5rem;
+  overflow: auto;
+}
+
+[id="modal"] .bd-example .btn,
+[id="buttons"] .bd-example .btn,
+[id="tooltips"] .bd-example .btn,
+[id="popovers"] .bd-example .btn,
+[id="dropdowns"] .bd-example .btn-group,
+[id="dropdowns"] .bd-example .dropdown,
+[id="dropdowns"] .bd-example .dropup,
+[id="dropdowns"] .bd-example .dropend,
+[id="dropdowns"] .bd-example .dropstart {
+  margin: 0 1rem 1rem 0;
+}
+// END CHEATSHEET.CSS as .SCSS
+
+// TOASTS DARK
+// =====================
+// Toast Dark Primary
+.toast-dark-primary {
+  background-color: $gray-800;
+  color: $white;
+  border: 1px solid $gray-800;
+}
+.toast-dark-primary .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 45%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-dark-primary i {
+  color: $blue-500;
+}
+.toast-dark-primary .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+// Toast Dark Success
+.toast-dark-success {
+  background-color: $gray-800;
+  color: $white;
+  border: 1px solid $gray-800;
+}
+.toast-dark-success .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 45%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-dark-success i {
+  color: $green-500;
+}
+.toast-dark-success .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+// Toast Dark Danger
+.toast-dark-danger {
+  background-color: $gray-800;
+  color: $white;
+  border: 1px solid $gray-800;
+}
+.toast-dark-danger .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 45%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-dark-danger i {
+  color: $red-500;
+}
+.toast-dark-danger .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+// Toast Dark Warning
+.toast-dark-warning {
+  background-color: $gray-800;
+  color: $white;
+  border: 1px solid $gray-800;
+}
+.toast-dark-warning .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 45%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-dark-warning i {
+  color: $yellow-500;
+}
+.toast-dark-warning .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+
+// TOASTS DEFAULTS
+// =====================
+// Toast Primary
+.toast-primary {
+  background-color: $blue-500;
+  color: $white;
+  border: 1px solid $blue-600;
+}
+.toast-primary .toast-header {
+  background-color: transparent;
+  color: lighten($blue, 30%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-primary i {
+  color: $white;
+}
+.toast-primary .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+// Toast Success
+.toast-success {
+  background-color: $green-500;
+  color: $white;
+  border: 1px solid $green-600;
+}
+.toast-success .toast-header {
+  background-color: transparent;
+  color: lighten($green, 30%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-success i {
+  color: $white;
+}
+.toast-success .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+// Toast Danger
+.toast-danger {
+  background-color: $red-500;
+  color: $white;
+  border: 1px solid $red-600;
+}
+.toast-danger .toast-header {
+  background-color: transparent;
+  color: lighten($red, 30%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-danger i {
+  color: $white;
+}
+.toast-danger .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+// Toast Warning
+.toast-warning {
+  background-color: $orange-500;
+  color: $white;
+  border: 1px solid $orange-600;
+}
+.toast-warning .toast-header {
+  background-color: transparent;
+  color: lighten($orange, 30%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-warning i {
+  color: $white;
+}
+.toast-warning .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+
+
+
+// TOASTS LIGHT
+// =====================
+// Toast Light Primary
+.toast-light-primary {
+  background-color: $white;
+  color: $dark;
+}
+.toast-light-primary .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 40%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-light-primary i {
+  color: $blue;
+}
+.toast-light-primary .btn-link {
+  color: $dark;
+  text-decoration: none;
+}
+
+// Toast Light Success
+.toast-light-success {
+  background-color: $white;
+  color: $dark;
+}
+.toast-light-success .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 40%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-light-success i {
+  color: $green;
+}
+.toast-light-success .btn-link {
+  color: $dark;
+  text-decoration: none;
+}
+
+// Toast Light Danger
+.toast-light-danger {
+  background-color: $white;
+  color: $dark;
+}
+.toast-light-danger .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 40%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-light-danger i {
+  color: $red;
+}
+.toast-light-danger .btn-link {
+  color: $dark;
+  text-decoration: none;
+}
+
+// Toast Light Warning
+.toast-light-warning {
+  background-color: $white;
+  color: $dark;
+}
+.toast-light-warning .toast-header {
+  background-color: transparent;
+  color: lighten($dark, 40%);
+  border: 0;
+  padding-bottom: 0;
+}
+.toast-light-warning i {
+  color: $yellow;
+}
+.toast-light-warning .btn-link {
+  color: $dark;
+  text-decoration: none;
+}
+
+
+
+
+// Custom Alert Primary
+.alert-primary {
+  background-color: $blue-100;
+  color: $dark;
+  border: 0;
+}
+.alert-primary .fa-stack-2x {
+  color: $blue-200;
+}
+.alert-primary .fa-stack-1x {
+  color: $blue-600;
+}
+.alert-primary .btn-link {
+  color: $dark;
+  text-decoration: none;
+}
+
+// Custom Alert Primary Light
+.alert-primary-light  {
+  background-color: $white;
+  border-left-width: 3px;
+  border-left-color: $blue;
+  border-bottom: 1px solid $gray-300;
+  border-right: 1px solid $gray-300;
+  border-top: 1px solid $gray-300;
+}
+.alert-primary-light .fa-stack-2x {
+  color: $blue-100;
+}
+.alert-primary-light .fa-stack-1x {
+  color: $blue-600;
+}
+.alert-primary-light .btn-link {
+  color: $dark;
+  text-decoration: none;
+}
+.alert-primary-light > div > div {
+  color: $body-color;
+}
+
+// Custom Alert Primary Dark
+.alert-primary-dark  {
+  background-color: $gray-800;
+  border-left-width: 3px;
+  border-left-color: $blue;
+  color: $white;
+}
+.alert-primary-dark .fa-stack-2x {
+  color: $blue;
+}
+.alert-primary-dark .fa-stack-1x {
+  color: $white;
+}
+.alert-primary-dark .btn-link {
+  color: $white;
+  text-decoration: none;
+}
+.alert-primary-dark > div > div {
+  color: $secondary;
+}
+.alert-primary-dark h6 {
+  color: $white !important;
+}
+
+
+// Custom Buttons (white color
+.btn-primary, .btn-secondary, .btn-success, .btn-warning, .btn-info {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+
+}
+
+// Custom style for Popover
+.popover-header {
+  padding-bottom: 0px !important;
+}
+.popover-body {
+  padding-top: ($spacer * .5) !important;
+}
+
+// Custom Code styles (All Colors > Cheatsheet)
+code {
+  background-color: #EFF2F7;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+code.code-dark {
+  background-color: rgba($white, 0.2);
+  border-radius: 4px;
+  color: rgba($white, 0.9);
+}
+
+code.code-light {
+  background-color: rgba($dark, 0.1);
+  border-radius: 4px;
+  color: $dark;
+}
+
+
+// Custom Table Header (th) style
+th {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+}
+
+thead th {
+  border-bottom: 1px solid $gray-400 !important;
+}
+
+// Custom Backgrounds for Greys
+.bg-gray-100 {
+  background-color: $gray-100;
+}
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+.bg-gray-400 {
+  background-color: $gray-400;
+}
+.bg-gray-500 {
+  background-color: $gray-500;
+}
+.bg-gray-600 {
+  background-color: $gray-600;
+}
+.bg-gray-700 {
+  background-color: $gray-700;
+}
+.bg-gray-800 {
+  background-color: $gray-800;
+}
+.bg-gray-900 {
+  background-color: $gray-900;
+}
+
+// Custom Backgrounds for All Colors
+.bg-blue-100 {
+  background-color: $blue-100;
+}
+.bg-blue-200 {
+  background-color: $blue-200;
+}
+.bg-blue-300 {
+  background-color: $blue-300;
+}
+.bg-blue-400 {
+  background-color: $blue-400;
+}
+.bg-blue-500 {
+  background-color: $blue-500;
+}
+.bg-blue-600 {
+  background-color: $blue-600;
+}
+.bg-blue-700 {
+  background-color: $blue-700;
+}
+.bg-blue-800 {
+  background-color: $blue-800;
+}
+.bg-blue-900 {
+  background-color: $blue-900;
+}
+
+.bg-indigo-100 {
+  background-color: $indigo-100;
+}
+.bg-indigo-200 {
+  background-color: $indigo-200;
+}
+.bg-indigo-300 {
+  background-color: $indigo-300;
+}
+.bg-indigo-400 {
+  background-color: $indigo-400;
+}
+.bg-indigo-500 {
+  background-color: $indigo-500;
+}
+.bg-indigo-600 {
+  background-color: $indigo-600;
+}
+.bg-indigo-700 {
+  background-color: $indigo-700;
+}
+.bg-indigo-800 {
+  background-color: $indigo-800;
+}
+.bg-indigo-900 {
+  background-color: $indigo-900;
+}
+
+.bg-purple-100 {
+  background-color: $purple-100;
+}
+.bg-purple-200 {
+  background-color: $purple-200;
+}
+.bg-purple-300 {
+  background-color: $purple-300;
+}
+.bg-purple-400 {
+  background-color: $purple-400;
+}
+.bg-purple-500 {
+  background-color: $purple-500;
+}
+.bg-purple-600 {
+  background-color: $purple-600;
+}
+.bg-purple-700 {
+  background-color: $purple-700;
+}
+.bg-purple-800 {
+  background-color: $purple-800;
+}
+.bg-purple-900 {
+  background-color: $purple-900;
+}
+
+.bg-pink-100 {
+  background-color: $pink-100;
+}
+.bg-pink-200 {
+  background-color: $pink-200;
+}
+.bg-pink-300 {
+  background-color: $pink-300;
+}
+.bg-pink-400 {
+  background-color: $pink-400;
+}
+.bg-pink-500 {
+  background-color: $pink-500;
+}
+.bg-pink-600 {
+  background-color: $pink-600;
+}
+.bg-pink-700 {
+  background-color: $pink-700;
+}
+.bg-pink-800 {
+  background-color: $pink-800;
+}
+.bg-pink-900 {
+  background-color: $pink-900;
+}
+
+.bg-red-100 {
+  background-color: $red-100;
+}
+.bg-red-200 {
+  background-color: $red-200;
+}
+.bg-red-300 {
+  background-color: $red-300;
+}
+.bg-red-400 {
+  background-color: $red-400;
+}
+.bg-red-500 {
+  background-color: $red-500;
+}
+.bg-red-600 {
+  background-color: $red-600;
+}
+.bg-red-700 {
+  background-color: $red-700;
+}
+.bg-red-800 {
+  background-color: $red-800;
+}
+.bg-red-900 {
+  background-color: $red-900;
+}
+
+.bg-orange-100 {
+  background-color: $orange-100;
+}
+.bg-orange-200 {
+  background-color: $orange-200;
+}
+.bg-orange-300 {
+  background-color: $orange-300;
+}
+.bg-orange-400 {
+  background-color: $orange-400;
+}
+.bg-orange-500 {
+  background-color: $orange-500;
+}
+.bg-orange-600 {
+  background-color: $orange-600;
+}
+.bg-orange-700 {
+  background-color: $orange-700;
+}
+.bg-orange-800 {
+  background-color: $orange-800;
+}
+.bg-orange-900 {
+  background-color: $orange-900;
+}
+
+.bg-yellow-100 {
+  background-color: $yellow-100;
+}
+.bg-yellow-200 {
+  background-color: $yellow-200;
+}
+.bg-yellow-300 {
+  background-color: $yellow-300;
+}
+.bg-yellow-400 {
+  background-color: $yellow-400;
+}
+.bg-yellow-500 {
+  background-color: $yellow-500;
+}
+.bg-yellow-600 {
+  background-color: $yellow-600;
+}
+.bg-yellow-700 {
+  background-color: $yellow-700;
+}
+.bg-yellow-800 {
+  background-color: $yellow-800;
+}
+.bg-yellow-900 {
+  background-color: $yellow-900;
+}
+
+.bg-green-100 {
+  background-color: $green-100;
+}
+.bg-green-200 {
+  background-color: $green-200;
+}
+.bg-green-300 {
+  background-color: $green-300;
+}
+.bg-green-400 {
+  background-color: $green-400;
+}
+.bg-green-500 {
+  background-color: $green-500;
+}
+.bg-green-600 {
+  background-color: $green-600;
+}
+.bg-green-700 {
+  background-color: $green-700;
+}
+.bg-green-800 {
+  background-color: $green-800;
+}
+.bg-green-900 {
+  background-color: $green-900;
+}
+
+.bg-teal-100 {
+  background-color: $teal-100;
+}
+.bg-teal-200 {
+  background-color: $teal-200;
+}
+.bg-teal-300 {
+  background-color: $teal-300;
+}
+.bg-teal-400 {
+  background-color: $teal-400;
+}
+.bg-teal-500 {
+  background-color: $teal-500;
+}
+.bg-teal-600 {
+  background-color: $teal-600;
+}
+.bg-teal-700 {
+  background-color: $teal-700;
+}
+.bg-teal-800 {
+  background-color: $teal-800;
+}
+.bg-teal-900 {
+  background-color: $teal-900;
+}
+
+.bg-cyan-100 {
+  background-color: $cyan-100;
+}
+.bg-cyan-200 {
+  background-color: $cyan-200;
+}
+.bg-cyan-300 {
+  background-color: $cyan-300;
+}
+.bg-cyan-400 {
+  background-color: $cyan-400;
+}
+.bg-cyan-500 {
+  background-color: $cyan-500;
+}
+.bg-cyan-600 {
+  background-color: $cyan-600;
+}
+.bg-cyan-700 {
+  background-color: $cyan-700;
+}
+.bg-cyan-800 {
+  background-color: $cyan-800;
+}
+.bg-cyan-900 {
+  background-color: $cyan-900;
+}
+
+// Custom Padding from 5rem to 7rem (todo)
+.p-6 {
+  padding: ($spacer * 3.5) !important;
+}
+.pe-6 {
+  padding-right: ($spacer * 3.5) !important;
+}
+.ps-6 {
+  padding-left: ($spacer * 3.5) !important;
+}
+.pt-6 {
+  padding-top: ($spacer * 3.5) !important;
+}
+.pb-6 {
+  padding-bottom: ($spacer * 3.5) !important;
+}
+.px-6 {
+  padding-left: ($spacer * 3.5) !important;
+  padding-right: ($spacer * 3.5) !important;
+}
+.py-6 {
+  padding-top: ($spacer * 3.5) !important;
+  padding-bottom: ($spacer * 3.5) !important;
+}
+
+.p-7 {
+  padding: ($spacer * 4) !important;
+}
+.pe-7 {
+  padding-right: ($spacer * 4) !important;
+}
+.ps-7 {
+  padding-left: ($spacer * 4) !important;
+}
+.pt-7 {
+  padding-top: ($spacer * 4) !important;
+}
+.pb-7 {
+  padding-bottom: ($spacer * 4) !important;
+}
+.px-7 {
+  padding-left: ($spacer * 4) !important;
+  padding-right: ($spacer * 4) !important;
+}
+.py-7 {
+  padding-top: ($spacer * 4) !important;
+  padding-bottom: ($spacer * 4) !important;
+}
+
+
+// Radius Borders Custom Helpers
+.rounded-4 {
+  border-radius: $border-radius-xl !important;
+}
+.rounded-5 {
+  border-radius: $border-radius-xxl !important;
+}
+
+// Modal Alert: Danger
+.modal-danger p {
+  color: $secondary;
+}
+.modal-danger .fa-stack-1x {
+  color: $red-600;
+}
+.modal-danger .fa-stack-2x {
+  color: $red-100;
+}
+
+// Text Colors
+.border-gray-100 {
+  border-color: $gray-100 !important;
+}
+.border-gray-200 {
+  border-color: $gray-200 !important;
+}
+.border-gray-300 {
+  border-color: $gray-300 !important;
+}
+.border-gray-400 {
+  border-color: $gray-400 !important;
+}
+.border-gray-500 {
+  border-color: $gray-500 !important;
+}
+.border-gray-600 {
+  border-color: $gray-600 !important;
+}
+.border-gray-700 {
+  border-color: $gray-700 !important;
+}
+.border-gray-800 {
+  border-color: $gray-800 !important;
+}
+.border-gray-900 {
+  border-color: $gray-900 !important;
+}
+
+
+// Border Helpers fo Grays
+.text-indigo {
+  color: $indigo-500;
+}
+.text-purple {
+  color: $purple-500;
+}
+.text-pink {
+  color: $pink-500;
+}
+.text-yellow {
+  color: $yellow-500;
+}
+.text-orange {
+  color: $orange-500;
+}
+.text-teal {
+  color: $teal-500;
+}
+.text-cyan {
+  color: $cyan-500;
+}
+
+// Sidebar Nav LIST - Light Primary
+  // Inactive
+  .sidebar-light-primary .list-group-flush .list-group-item  {
+    color: $body-color;
+    border-bottom: 1px solid transparent !important;
+    padding-top: $spacer * .25;
+  }
+  .sidebar-light-primary .list-group-item  .me-3 {
+    color: $gray-300;
+  }
+  .sidebar-light-primary .list-group-item  .fa-angle-left {
+    color: $gray-300;
+  }
+  .sidebar-light-primary .list-group-item  .fa-angle-down {
+    color: $gray-300;
+  } 
+
+ .sidebar-light-primary .list-group-item  .fa-ellipsis-v {
+    color: $gray-300;
+  }
+
+  // Active
+  .sidebar-light-primary .list-group-item.active {
+    color: $gray-800;
+    font-weight: 500;
+    background-color: transparent !important;
+    box-shadow: inset 3px 0px 0px 0px $blue-500;
+  }
+  .sidebar-light-primary .list-group-item.active .me-3 {
+    color: $blue;
+  }
+
+// Hover
+.sidebar-light-primary .list-group-item:hover {
+  color: $gray-800;
+  background-color: transparent !important;
+}
+.sidebar-light-primary .list-group-item:hover .me-3 {
+  color: $gray-800;
+}
+.sidebar-light-primary .list-group-item:hover .fa-angle-left {
+  color: $body-color;
+}
+.sidebar-light-primary .list-group-item:hover .fa-angle-down {
+  color: $body-color;
+}
+.sidebar-light-primary .list-group-item:hover .fa-ellipsis-v {
+  color: $body-color;
+}
+
+// Focus
+.sidebar-light-primary .list-group-flush .list-group-item:focus {
+  color: $dark;
+  background-color: transparent !important;
+  border: solid 1px transparent !important;
+}
+
+// Active / Press
+.sidebar-light-primary .list-group-item:active {
+  color: $gray-800;
+  background-color: transparent !important;
+}
+
+
+
+// Sidebar Nav PILLS - Light Primary
+  // Inactive
+  .sidebar-light-primary .nav-link {
+    color: $body-color;
+  }
+  .sidebar-light-primary .nav-link .me-3 {
+    color: $gray-300;
+  }
+  .sidebar-light-primary .nav-link .fa-angle-left {
+    color: $gray-300;
+  }
+  .sidebar-light-primary .nav-link .fa-angle-down {
+    color: $gray-300;
+  } 
+
+ .sidebar-light-primary .nav-link .fa-ellipsis-v {
+    color: $gray-300;
+  }
+
+  // Active
+  .sidebar-light-primary .nav-link.active {
+    color: $gray-800;
+    font-weight: 500;
+    background-color: $gray-100;
+  }
+  .sidebar-light-primary .nav-link.active .me-3 {
+    color: $blue;
+  }
+
+  // Hover
+  .sidebar-light-primary .nav-link:hover {
+    color: $gray-800;
+    background-color: $gray-100;
+  }
+  .sidebar-light-primary .nav-link:hover .me-3 {
+    color: $primary;
+  }
+ .sidebar-light-primary .nav-link:hover .fa-angle-left {
+    color: $body-color;
+  }
+  .sidebar-light-primary .nav-link:hover .fa-angle-down {
+    color: $body-color;
+  }
+ .sidebar-light-primary .nav-link:hover .fa-ellipsis-v {
+    color: $body-color;
+  }
+
+  // Active / Press
+  .sidebar-light-primary .nav-link:active {
+    color: $gray-800;
+    background-color: $gray-200;
+  }
+
+  // Footer
+  .sidebar-light-primary .footer {
+    color: $body-color;
+  }
+
+// Sidebar Nav - Slim Primary
+  // Inactive
+  .sidebar-primary .nav-link {
+    color: lighten($blue, 20%);
+  }
+
+  // Active
+  .sidebar-primary .nav-link.active {
+    color: $white;
+    background-color: darken($blue, 9%);
+  }
+
+  // Hover
+  .sidebar-primary .nav-link:hover {
+    color: $white;
+    background-color: darken($blue, 9%);
+  }
+
+  // Active / Press
+  .sidebar-primary .nav-link:active {
+    color: $white;
+    background-color: darken($blue, 15%);
+  }
+
+
+
+// Badge Add Filter
+.badge-add-filter {
+    color: $dark;
+    font-weight: $font-weight-normal;
+    border: dashed 1px $gray-400;
+    padding: 6px;
+    padding-left: 10px;
+}
+.badge-add-filter .fa-plus {
+    color: $secondary;
+}
+.badge-add-filter:hover {
+    border: dashed 1px $gray-600;
+}
+
+// BADGE FILTER
+.badge-filter {
+    color: $dark;
+    font-weight: $font-weight-normal;
+    background-color: $gray-200;
+    border: 1px solid $gray-200;
+    height: 30px;
+}
+
+
+a.badge-filter {
+  color: $dark;
+  font-weight: $font-weight-normal;
+  background-color: $gray-200;
+  text-decoration: none;
+  border: 1px solid $gray-200;
+}
+
+a.badge-filter:hover {
+  background-color: $gray-300;
+  border: 1px solid $gray-300;
+}
+
+// Filter for badge-light-light
+a.badge-light-light {
+  color: $dark;
+  font-weight: $font-weight-normal;
+  background-color: $gray-200;
+  text-decoration: none;
+  border: 1px solid $gray-200;
+}
+a.badge-light-light:hover {
+  background-color: $gray-300;
+  border: 1px solid $gray-300;
+}
+
+
+// BADGE OUTLINE FILTER
+.badge-outline-filter {
+  background-color: $white;
+  border: solid 1px $gray-300;
+  height: 30px;
+ }
+
+ a.badge-outline-filter {
+  color: $dark;
+  font-weight: $font-weight-normal;
+  background-color: $white;
+  text-decoration: none;
+  border: 1px solid $gray-300;
+}
+
+a.badge-outline-filter:hover {
+  background-color: $gray-100;
+  border: 1px solid $gray-400;
+}
+
+
+// Filter for badge-outline-light
+a.badge-outline-light {
+  color: $dark;
+  font-weight: $font-weight-normal;
+  background-color: $white;
+  text-decoration: none;
+  border: 1px solid $gray-300;
+}
+a.badge-outline-light:hover {
+  background-color: $gray-100;
+  border: 1px solid $gray-400;
+}
+
+// Modal Filter - disabled large focus in input
+.modal-dialog input:focus {
+  box-shadow: none;
+}
+
+// Avatar Sizes
+.avatar-sm {
+  height: 25px;
+  width: 25px;
+}
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+.avatar-lg {
+  height: 70px;
+  width: 70px;
+}
+
+// Avatars Stacked from Codepen
+.avatars {
+  display: flex;
+  list-style-type: none;
+  margin: auto;
+  padding:0px;
+  flex-direction: row;
+	&__item{
+		background-color: $gray-200;
+	  border: 2px solid $body-bg;
+	  border-radius: 100%;
+	  color: $white;
+	  display: block;
+	  font-family: sans-serif;
+	  font-size: 12px;
+	  font-weight: 100;
+	  height: 30px;
+		width: 30px;
+	  line-height: 15px;
+	  text-align: center;
+		overflow: hidden;
+		margin-left: -10px;
+    &:first-child {
+      z-index: 5;
+    }
+    &:nth-child(2) {
+      z-index: 4;
+    }
+    &:nth-child(3) {
+      z-index: 3;
+    }
+    &:nth-child(4) {
+      z-index: 2;
+    }
+		&:nth-child(5) {
+      z-index: 1;
+    }
+    &:last-child {z-index: 0}
+    img{width:100%}
+	}
+}
+
+// Modal Filter - removed bottom border in <li>
+.modal-dialog .list-group-item {
+  border-bottom: none;
+}
+
+// Custom Badge Pill
+.badge-tag {
+  background-color: $gray-200;
+  color: $dark;
+  font-weight: normal;
+  display: inline-flex;
+  gap: 0.5em;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 8px;
+}
+
+
+// Custom Badges "Light"
+.badge-light-primary {
+  background-color: $blue-100;
+  border: 1px solid $blue-100;
+  color: $blue-800;
+}
+.badge-light-secondary {
+  background-color: $gray-200;
+  border: 1px solid $gray-200;
+  color: $gray-800;
+}
+.badge-light-success {
+  background-color: $green-100;
+  border: 1px solid $green-100;
+  color: $green-800;
+}
+.badge-light-danger {
+  background-color: $red-100;
+  border: 1px solid $red-100;
+  color: $red-800;
+}
+.badge-light-warning {
+  background-color: $yellow-100;
+  border: 1px solid $yellow-100;
+  color: $yellow-800;
+}
+.badge-light-info {
+  background-color: $cyan-200;
+  border: 1px solid $cyan-200;
+  color: $cyan-800;
+}
+.badge-light-light {
+  background-color: $gray-200;
+  border: 1px solid $gray-200;
+  color: $gray-800;
+}
+.badge-light-dark {
+  background-color: $gray-400;
+  border: 1px solid $gray-400;
+  color: $gray-800;
+}
+
+// Custom Badges "Outline"
+.badge-outline-primary {
+  border: 1px solid $blue-200;
+}
+.badge-outline-secondary {
+  border: 1px solid $gray-400;
+}
+.badge-outline-success {
+  border: 1px solid $green-200;
+}
+.badge-outline-danger {
+  border: 1px solid $red-200;
+}
+.badge-outline-warning {
+  border: 1px solid $yellow-200;
+}
+.badge-outline-info {
+  border: 1px solid $cyan-200;
+}
+.badge-outline-light {
+  border: 1px solid $gray-300;
+}
+.badge-outline-dark {
+  border: 1px solid $gray-500;
+}
+
+
+// Avatar Sizes
+.avatar-xs {
+  height: 20px;
+  width: 20px;
+}
+.avatar-sm {
+  height: 25px;
+  width: 25px;
+}
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+.avatar-lg {
+  height: 70px;
+  width: 70px;
+}
+
+
+// Helper for Avatar 
+.badge-avatar {
+ padding-left: 5px; 
+}
+
+// Tabs Line Default
+.nav-line > .nav-item > .nav-link {
+  color: $gray-500 !important;
+  text-transform: inherit;
+  background-color: transparent;
+  padding-bottom: 13px;
+}
+.nav-line > .nav-item > .nav-link:hover {
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  color: $gray-700 !important;
+}
+.nav-line > .nav-item > .nav-link.active {
+  color: $gray-800 !important;
+  background-color: transparent;
+  border-color: transparent !important;
+  text-transform: inherit;
+  position: relative;
+  clip-path: inset(0);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: calc(100% - 2px) 0 0 0;
+    border-top: 4px solid $dark;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+   }
+}
+
+// MODAL LIST (Autocomplete, Filters)
+
+  // State: IDLE
+  .list-modal .list-group-item {
+    border-bottom: 1px solid transparent;
+  }
+  .list-modal .list-group-item small {
+    color: $body-color;
+  }
+
+  // State: Active
+  .list-modal .list-group-item.active {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 1px solid white !important;
+    border-top: 1px solid white !important;
+  }
+
+  // State: Press
+  .list-modal .list-group-item:active {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 1px solid white !important;
+    border-top: 0px solid white !important;
+  }
+
+  // State: Active + Press
+  .list-modal .list-group-item.active:active {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 1px solid white !important;
+    border-top: 1px solid white !important;
+  }
+
+
+
+  // State: First Child
+  .list-modal .list-group-item.active:first-child {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 1px solid white !important;
+    border-top: 0px solid $gray-200 !important;
+  }
+  // State: Active + Press
+  .list-modal .list-group-item.active:active:first-child {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 1px solid white !important;
+    border-top: 0px solid white !important;
+  }
+  // State: Press
+  .list-modal .list-group-item:active:first-child {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 1px solid white !important;
+    border-top: 0px solid white !important;
+  }
+
+
+
+  // State: Last Child
+  .list-modal .list-group-item.active:last-child {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 0px solid white !important;
+    border-top: 1px solid white !important;
+  }
+  // State: Active/Press
+  .list-modal .list-group-item.active:active:last-child {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 0px solid white !important;
+    border-top: 1px solid white !important;
+  }
+  // State: Active/Press
+  .list-modal .list-group-item:active:last-child {
+    background-color: $gray-200;
+    color: $dark;
+    border-right: 0px solid transparent !important;
+    border-left: 0px solid transparent !important;
+    border-bottom: 0px solid white !important;
+    border-top: 0px solid white !important;
+  }
+
+// Button with Only Icon: Edit or Pen.
+.btn-badge {
+  height: 30px;
+  width: 30px;
+  border: 1px $gray-500 dashed;
+  color: $dark;
+  font-size: 12px;
+}
+.btn-badge:hover {
+  border: 1px $gray-600 dashed;
+  color: $gray-900;
+}
+.btn-badge:focus {
+  border: 1px $gray-600 dashed;
+  background-color: $gray-200;
+}
+.btn-badge.show {
+  background-color: $gray-200;
+}
+
+// Button PRIMARY: default, outline & subtle
+
+// outline
+.btn-outline-primary {
+  background-color: $white;
+  color: $blue-600;
+  border: 1px solid $blue-100;
+}
+.btn-outline-primary:hover {
+  background-color: $blue-100;
+  color: $blue-600;
+  border: 1px solid $blue-200;
+}
+.btn-outline-primary:active {
+  background-color: $blue-100;
+  color: $blue-600;
+  border: 1px solid $blue-400;
+}
+
+// subtle
+.btn-subtle-primary {
+  background-color: $blue-100;
+  color: $blue-600;
+}
+.btn-subtle-primary:hover {
+  background-color: $blue-100;
+  color: $blue-700;
+}
+.btn-subtle-primary:active {
+  background-color: $blue-200;
+  color: $blue-700;
+}
+
+// pill
+.btn-pill-primary {
+  color: $blue;
+}
+.btn-pill-primary:hover {
+  color: $blue-600;
+  background-color: $blue-100;
+}
+.btn-pill-primary:active {
+  color: $blue-600;
+  background-color: $blue-200;
+}
+.btn-pill-primary.active {
+  color: $blue-600;
+  background-color: $blue-100;
+}
+
+
+// Button LIGHT: default, outline & subtle
+
+// outline
+.btn-outline-light {
+  background-color: transparent;
+  color: $body-color;
+  border: 1px solid $gray-300;
+}
+.btn-outline-light:hover {
+  background-color: $gray-300;
+  border: 1px solid $gray-300;
+}
+.btn-outline-light:active {
+  background-color: $gray-200;
+  border: 1px solid $gray-500;
+}
+.btn-outline-light.active {
+  background-color: $body-color;
+  border: 1px solid $body-color;
+  color: $white;
+}
+
+// default
+.btn-light {
+  background-color: #E0E6ED;
+  color: $dark;
+  border: 1px solid #E0E6ED;
+}
+.btn-light:hover {
+  background-color: #C0CCDA;
+  border: 1px solid #C0CCDA;
+}
+.btn-light:active {
+  background-color: $gray-500;
+  border: 1px solid $gray-500;
+}
+
+// subtle
+.btn-subtle-light {
+  background-color: #E0E6ED;
+  color: $dark;
+  border: 1px solid #E0E6ED;
+}
+.btn-subtle-light:hover {
+  background-color: #C0CCDA;
+  border: 1px solid #C0CCDA;
+  color: $dark;
+}
+.btn-subtle-light:active {
+  background-color: #C0CCDA;
+  border: 1px solid #C0CCDA;
+}
+
+// pill
+.btn-pill-light {
+  color: $body-color;
+}
+.btn-pill-light:hover {
+  color: $gray-600;
+  background-color: $gray-200;
+}
+.btn-pill-light:active {
+  color: $gray-600;
+  background-color: $gray-300;
+}
+.btn-pill-light.active {
+  color: $body-color;
+  background-color: #E0E6ED;
+}
+
+// Tabs Line Primary
+.nav-line-primary > .nav-item > .nav-link {
+  color: $body-color !important;
+  text-transform: inherit;
+  background-color: transparent;
+  padding-bottom: 13px;
+}
+.nav-line-primary > .nav-item > .nav-link:hover {
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  color: $gray-700 !important;
+}
+.nav-line-primary > .nav-item > .nav-link.active {
+  color: $dark !important;
+  background-color: transparent;
+  border-color: transparent !important;
+  text-transform: inherit;
+  position: relative;
+  clip-path: inset(0);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: calc(100% - 2px) 0 0 0;
+    border-top: 4px solid $primary;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+   }
+}
+
+.card-gallery .card-img-overlay:hover {
+  box-shadow: inset 0px 0px 0px 5px var(--bs-blue);
+  --bs-bg-opacity: .8;
+  background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.nav-offcanvas {
+  --bs-nav-link-color:              rgba(var(--bs-white-rgb), .55);
+  --bs-nav-link-hover-color:        white;
+  --bs-nav-pills-link-active-color: white;
+  --bs-nav-pills-link-active-bg:    rgba(var(--bs-white-rgb), .20);
+}
+
+button.btn-filter {
+  --bs-btn-border-color: #{$secondary-border-subtle};
+  border-style: dashed;
+  --bs-btn-hover-border-color: #{$secondary};
+}
+
+@include media-breakpoint-up(md) {
+  .offcanvas {
+      width: 75% !important; 
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .offcanvas {
+      width: 75% !important; 
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .offcanvas {
+      width: 75% !important; 
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .offcanvas {
+      width: 50% !important;
+  }
+}
+
+.btn-ghost {
+  --bs-btn-hover-bg: #{$gray-200};
+  --bs-btn-active-bg: #{$gray-200};
+}

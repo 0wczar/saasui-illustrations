@@ -1,0 +1,163 @@
+// Core overides styles from variables.scss
+
+$border-radius-xl:            .4rem !default;
+$border-radius-xxl:           .5rem !default;
+
+// scss-docs-start gray-color-variables
+$white:    #fff !default; 
+$gray-100: #F8F9FA !default; //changed
+$gray-200: #E9ECEF !default; //changed
+$gray-300: #DEE2E6 !default; //changed
+$gray-400: #CED4DA !default; //changed
+$gray-500: #ADB5BD !default; //changed
+$gray-600: #868E96 !default; //changed
+$gray-700: #5D636D !default; //changed
+$gray-800: #3F4651 !default; //changed
+$gray-900: #353C48 !default; //changed
+$black:    #1F2D3D !default; //changed
+
+// scss-docs-start color-variables
+$blue:    #1EB7FF !default; //changed
+$indigo:  #6610f2 !default; //changed
+$purple:  #CA8EFF !default; //changed
+$pink:    #e83e8c !default; //changed
+$red:     #ED1C24 !default; //changed
+$orange:  #F27212 !default; //changed
+$yellow:  #F7BF47 !default; //changed
+$green:   #1BB934 !default; //changed
+$teal:    #20c997 !default; //changed
+$cyan:    #33AE9A !default; //changed
+
+// scss-docs-start theme-color-variables
+$primary:       $blue !default;
+
+$dark:          $gray-900 !default;
+
+$font-weight-normal:          400 !default;
+
+$border-radius-lg:            .5rem !default;
+$border-radius-pill:          50rem !default;
+
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+
+$body-bg:                   #F9FAFC !default; //changed
+$body-color:                #8493A5 !default; //changed
+
+$link-color:                              $primary !default;
+$link-decoration:                         none !default; //changed
+$link-shade-percentage:                   20% !default;
+
+$link-hover-decoration:                   underline !default; //changed
+
+// $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default; //changed
+
+// $font-size-base affects the font size of the body text
+$font-size-root:              null !default;
+$font-size-base:              0.875rem !default; // Assumes the browser default, typically `16px` changed
+$font-size-sm:                0.75rem !default; //changed
+$font-size-lg:                1rem !default; //changed
+
+
+$font-weight-semibold:        500 !default; //changed
+
+$headings-color:              $dark; //changed
+
+$text-muted:                  lighten($body-color, 14%) !default; //changed
+
+$mark-bg:                     #fcf8e3 !default; //changed
+
+$table-color:                 $body-color !default; //changed
+$table-th-font-weight:        $font-weight-normal !default; //changed
+$table-striped-bg:            rgba($gray-500, .075) !default; // changed
+// $table-hover-color:           $dark !default; //changed
+$table-hover-bg:              rgba($gray-500, .075) !default; //changed
+// $table-border-color:          $gray-200 !default; //changed
+
+$form-label-color:                      $dark !default; //changed
+
+
+$form-select-disabled-color:        $gray-500 !default; //changed
+$form-select-disabled-bg:           $body-bg !default; //changed
+$form-select-disabled-border-color: $gray-300 !default; // changed
+
+$form-file-button-bg:             $gray-200 !default; //changed 
+
+$nav-link-color:                    $body-color !default; //changed
+$nav-link-hover-color:              $dark !default; //changed
+$nav-link-disabled-color:           $gray-500 !default; //changed
+$nav-tabs-link-active-color:        $dark !default; //changed
+$nav-pills-link-active-color:       $dark !default; //changed
+$nav-pills-link-active-bg:          $gray-200 !default; //changed
+
+$dropdown-border-color:             $gray-300 !default; // changed
+$dropdown-border-radius:            $border-radius-lg !default; //changed
+$dropdown-divider-bg:               $gray-200 !default; // changed
+$dropdown-box-shadow:               $box-shadow-sm !default; // changed
+$dropdown-link-color:               $body-color !default; // changed
+$dropdown-link-hover-color:         $dark !default; //changed
+$dropdown-link-hover-bg:            $gray-100 !default; //changed
+$dropdown-link-active-color:        $dark !default; //changed
+$dropdown-link-active-bg:           $gray-200 !default; //changed
+$dropdown-header-color:             $dark !default; // change
+
+$pagination-color:                  $body-color !default; // change
+$pagination-bg:                     transparent !default;
+$pagination-border-color:           none !default;
+//$pagination-focus-color:            $link-hover-color !default; //changed
+//$pagination-hover-color:            $link-hover-color !default; //change
+$pagination-active-color:           $dark !default; // change
+$pagination-active-bg:              $gray-200 !default; //change
+$pagination-active-border-color:    $gray-300 !default; // change
+$pagination-disabled-color:         $gray-500 !default; // change
+$pagination-disabled-bg:            $gray-100 !default; // change
+
+
+$popover-bg:                        $dark !default; // changed
+$popover-border-color:              $dark !default; // changed
+$popover-header-color:              $white !default; //changed
+
+// scss-docs-start badge-variables
+$badge-font-size:                   12px !default; //changed
+
+$modal-content-border-color:        $gray-300 !default; //changed
+$modal-content-box-shadow-xs:       $box-shadow-lg !default; //changed
+$modal-backdrop-bg:                 $white !default; //changed
+$modal-backdrop-opacity:            .7 !default; //changed
+$modal-header-border-color:         $gray-200 !default; //changed
+
+$alert-border-radius:           $border-radius-lg !default; //changed
+
+// scss-docs-start progress-variables
+$progress-height:                   1rem !default; // changed
+$progress-border-radius:            $border-radius-pill !default; //changed
+
+$list-group-color:                  $body-color !default;
+$list-group-border-color:           yellow !default; // changed
+$list-group-border-radius:          $border-radius-lg !default; // changed
+$list-group-item-padding-y:         .75rem !default; // changed
+$list-group-item-padding-x:         1.25rem !default; // changed
+$list-group-hover-bg:               $gray-200 !default;
+$list-group-active-color:           $dark !default; // change
+$list-group-active-bg:              $gray-200 !default; // change
+$list-group-active-border-color:    $gray-200 !default; // change
+$list-group-disabled-color:         $text-muted !default; //changed
+$list-group-action-color:           $body-color !default; // change
+$list-group-action-hover-color:     $dark !default; // change
+$list-group-action-active-bg:       $gray-100 !default; //changed
+
+$thumbnail-bg:                      $white !default; //changed
+$thumbnail-border-color:            $gray-300 !default; //changed
+
+$breadcrumb-divider-color:          $gray-400 !default; //changed
+$breadcrumb-active-color:           $body-color !default; // changed
+
+$kbd-color:                         $white !default; //changed
+$kbd-bg:                            $gray-900 !default; //changed
+
+$modal-content-bg:                 white !default; //changed
+$modal-footer-bg:                   $gray-100 !default;
