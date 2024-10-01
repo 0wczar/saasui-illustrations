@@ -2,89 +2,102 @@
 layout: page
 title:  'Illustrations'
 ---
-<!-- START PAGE -->
- <div class="row">
+<!-- START CONTENT -->
+<div class="row">
 
-     <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
-     {% assign categories = "" %}
-     {% for file in site.static_files %}
-       {% if file.path contains '/assets/avatars/' %}
-         {% assign path_parts = file.path | split: '/' %}
-         {% assign category_name = path_parts[3] %}
-         {% unless categories contains category_name %}
-           {% assign categories = categories | append: category_name | append: "," %}
-         {% endunless %}
-       {% endif %}
-     {% endfor %}
-     {% assign categories = categories | split: ',' | uniq %}
- 
-     {% for category in categories %}
-       {% unless category == "" %}
-         <!-- START Category Header -->
-         <h2 class="my-4">
-           {{ category | capitalize }}
-           <small class="text-muted ms-2">
-             <!-- Zliczanie plików w danej kategorii -->
-             {% assign count = 0 %}
-             {% for avatar in site.static_files %}
-               {% assign avatar_parts = avatar.path | split: '/' %}
-               {% if avatar_parts[3] == category %}
-                 {% assign count = count | plus: 1 %}
-               {% endif %}
-             {% endfor %}
-             {{ count }}
-           </small>
-         </h2>
-         <!-- END Category Header -->
- 
-         <div class="row">
-           <!-- Przechodzimy przez pliki w katalogu -->
-           {% for avatar in site.static_files %}
-             {% assign avatar_parts = avatar.path | split: '/' %}
-             {% if avatar_parts[3] == category %}
-               <!-- Wyodrębnij nazwę pliku bez rozszerzenia -->
-               {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
- 
-               <!-- START Card -->
-               <div class="col-md-2 mb-4">
-                 <div class="card">
-                   <img src="{{ avatar.path }}" class="card-img-top h-25" alt="{{ filename | capitalize }}">
-                   <div class="card-body">
-                     <h5 class="card-title">
-                       <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}-{{ category }}">
-                         {{ filename | capitalize }}
-                       </a>
-                     </h5>
-                     <p class="card-text">Kategoria: {{ category | capitalize }}</p>
-                   </div>
-                 </div>
-               </div>
-               <!-- END Card -->
- 
-               <!-- START Modal -->
-               <div class="modal fade" id="modal-{{ forloop.index }}-{{ category }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}-{{ category }}" aria-hidden="true">
-                 <div class="modal-dialog">
-                   <div class="modal-content">
-                     <div class="modal-header">
-                       <h5 class="modal-title" id="modalLabel-{{ forloop.index }}-{{ category }}">{{ filename | capitalize }}</h5>
-                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                     </div>
-                     <div class="modal-body">
-                       <img src="{{ avatar.path }}" class="img-fluid mb-3" alt="{{ filename | capitalize }}">
-                       <p>Kategoria: {{ category | capitalize }}</p>
-                     </div>
-                     <div class="modal-footer">
-                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-               <!-- END Modal -->
-             {% endif %}
-           {% endfor %}
-         </div>
-       {% endunless %}
-     {% endfor %}
+  <!-- START Sidebar -->
+  <div class="col-2">Menu</div>
+  <!-- END Sidebar -->
+
+  <!-- START Right Content -->
+  <div class="col-10">
+
+      <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
+      {% assign categories = "" %}
+      {% for file in site.static_files %}
+        {% if file.path contains '/assets/avatars/' %}
+          {% assign path_parts = file.path | split: '/' %}
+          {% assign category_name = path_parts[3] %}
+          {% unless categories contains category_name %}
+            {% assign categories = categories | append: category_name | append: "," %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+      {% assign categories = categories | split: ',' | uniq %}
+  
+      {% for category in categories %}
+        {% unless category == "" %}
+
+          <!-- START Category Header -->
+          <h2 class="my-4 fw-normal">
+            {{ category | capitalize }}
+            <small class="text-muted ms-2 fw-normal">
+              {% assign count = 0 %}
+              {% for avatar in site.static_files %}
+                {% assign avatar_parts = avatar.path | split: '/' %}
+                {% if avatar_parts[3] == category %}
+                  {% assign count = count | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+              {{ count }}
+            </small>
+          </h2>
+          <!-- END Category Header -->
+  
+
+            <div class="row">
+
+              {% for avatar in site.static_files %}
+                {% assign avatar_parts = avatar.path | split: '/' %}
+                {% if avatar_parts[3] == category %}
+
+                  {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
+    
+                  <!-- START Card -->
+                  <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm">
+                      <img src="{{ avatar.path }}" class="card-img-top h-25" alt="{{ filename | capitalize }}">
+                      <div class="card-body border-top ">
+                        <h6 class="card-title mb-1">
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}-{{ category }}" class="link-dark fw-normal">
+                            {{ filename | capitalize }}
+                          </a>
+                        </h6>
+                        <p class="card-text">Kategoria: {{ category | capitalize }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END Card -->
+    
+                  <!-- START Modal -->
+                  <div class="modal fade" id="modal-{{ forloop.index }}-{{ category }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}-{{ category }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalLabel-{{ forloop.index }}-{{ category }}">{{ filename | capitalize }}</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="{{ avatar.path }}" class="img-fluid mb-3" alt="{{ filename | capitalize }}">
+                          <p>Kategoria: {{ category | capitalize }}</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END Modal -->
+
+                {% endif %}
+              {% endfor %}
+            </div>
+
+        {% endunless %}
+      {% endfor %}
+
+  </div>
+  <!-- END Right Content -->
 
 </div>
-<!-- END PAGE -->
+<!-- END CONTENT -->
