@@ -1,0 +1,37 @@
+                  <!-- START Modal -->
+                  <div class="modal fade" id="modal-{{ forloop.index }}-{{ category }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}-{{ category }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header border-bottom-0 px-4">
+                          <h5 class="modal-title" id="modalLabel-{{ forloop.index }}-{{ category }}">{{ filename | capitalize }}</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body pt-0 px-4">
+                          <img src="{{ avatar.path }}" class="img-fluid w-100 mb-3 rounded border" alt="{{ filename | capitalize }}">
+
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <td class="text-secondary">Title</td>
+                                <td class="text-end fw-medium">{{ filename | capitalize }}</td>
+                              </tr>
+                              <tr>
+                                <td class="text-secondary">Category</td>
+                                <td class="text-end fw-normal"><code class="text-dark">/{{ category | capitalize }}</code></td>
+                              </tr>
+                              <tr>
+                                <td class="text-secondary">Link</td>
+                                <td class="text-end">
+                                  <a href="{{ avatar.path }}" download>
+                                    <i class="fa fa-circle-down me-2"></i>Download
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- END Modal -->
