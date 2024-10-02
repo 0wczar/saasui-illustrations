@@ -14,46 +14,17 @@ title:  'Illustrations'
   {% endfor %}
   <!-- END Zliczanie wszystkich obrazkow w kat. /assets -->
 
-  <!-- START Sidebar -->
+  <!-- START LEFT SIDEBAR -->
   <div class="col-2">
-    <h6 class="mb-3 fw-normal">Menu</h6>
-    <ul class="list-unstyled pb-5 border-bottom">
-      <a href="#" class="d-flex align-items-center pt-2 fw-normal text-dark">
-        <div class="bg-danger-subtle px-2 py-1 me-3 border rounded border-danger-subtle shadow-sm">
-          <i class="fa fa-image text-danger-emphasis fa-xs fa-fw"></i>
-        </div>
-        Illustrations
-      </a>
 
-      <a href="#" class="d-flex align-items-center pt-2 text-secondary">
-        <div class="bg-primary-subtle px-2 py-1 me-3 border rounded border-primary-subtle shadow-sm">
-          <i class="fa fa-code text-primary-emphasis fa-xs fa-fw"></i>
-        </div>
-        Github
-      </a>
+    {% include sidebar-menu.html %}
 
-      <a href="#" class="d-flex align-items-center pt-2 text-secondary">
-        <div class="bg-success-subtle px-2 py-1 me-3 border rounded border-success-subtle shadow-sm">
-          <i class="fa fa-arrow-pointer text-success-emphasis fa-xs fa-fw"></i>
-        </div>
-        Figma
-      </a>
-
-      <a href="#"  class="d-flex align-items-center pt-2 text-secondary">
-        <div class="bg-warning-subtle px-2 py-1 me-3 border rounded border-warning-subtle shadow-sm">
-          <i class="fa fa-envelope text-warning-emphasis fa-xs fa-fw"></i>
-        </div>
-        Contact
-      </a>
-
-    </ul>
-
-    <!-- START Categories -->
+    <!-- START Sidebar Categories -->
     <div class="d-flex align-items-center mb-3">
       <h6 class="mb-0">Categories </h6>
       <small class="text-secondary ms-auto align-self-center fw-normal">{{ total_count }}</small>
     </div>
-    <!-- END Categories -->
+    <!-- END Sidebar Categories -->
 
     <ul class="list-unstyled">
       {% assign categories = "" %}
@@ -72,17 +43,22 @@ title:  'Illustrations'
       {% for category in categories %}
         {% unless category == "" %}
           <li>
-            <a href="#{{ category | replace: '%20', '-' }}" class="link-secondary">{{ category | replace: '%20', ' ' | capitalize }}</a>
+            <a href="#{{ category | replace: '%20', '-' }}" class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-secondary mb-2">{{ category | replace: '%20', ' ' | capitalize }}</a>
           </li>
         {% endunless %}
       {% endfor %}
 
     </ul>
   </div>
-  <!-- END Sidebar -->
+  <!-- END LEFT SIDEBAR -->
 
   <!-- START Right Content -->
   <div class="col-10">
+
+    <h1>{{ total_count }} Illustrations for Your Design Systems and Docs</h1>
+    <p class="lead text-secondary">Free Illustrations prepared specially for documentations, frameworks, designs system etc. </p>
+
+    <hr class="mt-4 mb-5" />
 
       <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
       {% assign categories = "" %}
@@ -101,7 +77,7 @@ title:  'Illustrations'
         {% unless category == "" %}
 
           <!-- START Category Header -->
-          <h2 class="my-4 fw-normal" id="{{ category | replace: '%20', '-' }}">
+          <h4 class="my-4 fw-normal" id="{{ category | replace: '%20', '-' }}">
             {{ category | capitalize }}
             <small class="text-muted ms-2 fw-normal">
               {% assign count = 0 %}
@@ -113,7 +89,7 @@ title:  'Illustrations'
               {% endfor %}
               {{ count }}
             </small>
-          </h2>
+          </h4>
           <!-- END Category Header -->
   
 
@@ -124,7 +100,6 @@ title:  'Illustrations'
                 {% if avatar_parts[3] == category %}
 
                   {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
-    
                   
                   <div class="col-md-3 mb-4">
                     <!-- START Card -->
@@ -132,8 +107,9 @@ title:  'Illustrations'
                     <!-- END Card -->
                   </div>
                   
-    
+                  <!-- START Modal -->
                   {% include modal.html %}
+                  <!-- END Modal -->
 
                 {% endif %}
               {% endfor %}

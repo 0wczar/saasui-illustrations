@@ -1,4 +1,4 @@
-                  <!-- START Modal -->
+
                   <div class="modal fade" id="modal-{{ forloop.index }}-{{ category }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}-{{ category }}" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -20,8 +20,8 @@
                                 <td class="text-end fw-normal"><code class="text-dark">/{{ category | capitalize }}</code></td>
                               </tr>
                               <tr>
-                                <td class="text-secondary">Link</td>
-                                <td class="text-end">
+                                <td class="text-secondary border-bottom-0">Link</td>
+                                <td class="text-end border-bottom-0">
                                   <a href="{{ avatar.path }}" download>
                                     <i class="fa fa-circle-down me-2"></i>Download
                                   </a>
@@ -34,4 +34,3 @@
                       </div>
                     </div>
                   </div>
-                  <!-- END Modal -->
