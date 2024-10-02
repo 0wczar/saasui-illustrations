@@ -1,0 +1,34 @@
+<svg width="296" height="141" viewBox="0 0 296 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="296" height="141" fill="#F1F1F2"/>
+<g clip-path="url(#clip0_78_7132)">
+<path d="M88 35C88 31.6863 90.6863 29 94 29H202C205.314 29 208 31.6863 208 35V106C208 109.314 205.314 112 202 112H94C90.6863 112 88 109.314 88 106V35Z" fill="white"/>
+<mask id="path-3-inside-1_78_7132" fill="white">
+<path d="M88 29H208V41H88V29Z"/>
+</mask>
+<path d="M88 29H208V41H88V29Z" fill="#F9FAFA"/>
+<path d="M208 40H88V42H208V40Z" fill="#E7E7E8" mask="url(#path-3-inside-1_78_7132)"/>
+<rect x="94" y="33" width="4" height="4" rx="2" fill="#E53E3E"/>
+<rect x="101" y="33" width="4" height="4" rx="2" fill="#FBC434"/>
+<rect x="108" y="33" width="4" height="4" rx="2" fill="#0EA371"/>
+<rect x="124.5" y="51" width="47" height="3" rx="1.5" fill="#8952E0"/>
+<rect x="139" y="57" width="18" height="3" rx="1.5" fill="#D3D4D5"/>
+<rect x="94" y="71" width="33" height="18" rx="3" fill="#E7E7E8"/>
+<path d="M107.5 77C107.5 76.4531 107.938 76 108.5 76H111V78C111 78.2812 111.219 78.5 111.5 78.5H113.5V83C113.5 83.5625 113.047 84 112.5 84H108.5C107.938 84 107.5 83.5625 107.5 83V77ZM111.5 78V76L113.5 78H111.5Z" fill="#ABADAF"/>
+<rect x="94" y="92" width="33" height="3" rx="1.5" fill="#ABADAF"/>
+<rect x="94" y="98" width="12" height="3" rx="1.5" fill="#D3D4D5"/>
+<rect x="132" y="71" width="33" height="18" rx="3" fill="#E7E7E8"/>
+<path d="M145.5 77C145.5 76.4531 145.938 76 146.5 76H149V78C149 78.2812 149.219 78.5 149.5 78.5H151.5V83C151.5 83.5625 151.047 84 150.5 84H146.5C145.938 84 145.5 83.5625 145.5 83V77ZM149.5 78V76L151.5 78H149.5Z" fill="#ABADAF"/>
+<rect x="132" y="92" width="33" height="3" rx="1.5" fill="#ABADAF"/>
+<rect x="132" y="98" width="12" height="3" rx="1.5" fill="#D3D4D5"/>
+<rect x="170" y="71" width="32" height="18" rx="3" fill="#E7E7E8"/>
+<path d="M183 77C183 76.4531 183.438 76 184 76H186.5V78C186.5 78.2812 186.719 78.5 187 78.5H189V83C189 83.5625 188.547 84 188 84H184C183.438 84 183 83.5625 183 83V77ZM187 78V76L189 78H187Z" fill="#ABADAF"/>
+<rect x="170" y="92" width="32" height="3" rx="1.5" fill="#ABADAF"/>
+<rect x="170" y="98" width="12" height="3" rx="1.5" fill="#D3D4D5"/>
+</g>
+<path d="M88.5 35C88.5 31.9624 90.9624 29.5 94 29.5H202C205.038 29.5 207.5 31.9624 207.5 35V106C207.5 109.038 205.038 111.5 202 111.5H94C90.9624 111.5 88.5 109.038 88.5 106V35Z" stroke="#D3D4D5"/>
+<defs>
+<clipPath id="clip0_78_7132">
+<path d="M88 35C88 31.6863 90.6863 29 94 29H202C205.314 29 208 31.6863 208 35V106C208 109.314 205.314 112 202 112H94C90.6863 112 88 109.314 88 106V35Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

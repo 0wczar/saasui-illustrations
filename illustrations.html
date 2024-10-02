@@ -5,6 +5,13 @@ title:  'Illustrations'
 <!-- START CONTENT -->
 <div class="row">
 
+  {% assign total_count = 0 %}
+{% for file in site.static_files %}
+  {% if file.path contains '/assets/avatars/' %}
+    {% assign total_count = total_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
   <!-- START Sidebar -->
   <div class="col-2">
     <h6 class="mb-3 fw-normal">Menu</h6>
@@ -39,7 +46,13 @@ title:  'Illustrations'
 
     </ul>
 
-    <h6>Categories</h6>
+    <!-- START Categories -->
+    <div class="d-flex align-items-center mb-3">
+      <h6 class="mb-0">Categories </h6>
+      <small class="text-secondary ms-auto align-self-center fw-normal">{{ total_count }}</small>
+    </div>
+    <!-- END Categories -->
+
     <ul class="list-unstyled">
       {% assign categories = "" %}
       {% for file in site.static_files %}
