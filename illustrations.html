@@ -5,14 +5,14 @@ title:  'Illustrations'
 <!-- START CONTENT -->
 <div class="row">
 
-  <!-- START Zliczanie wszystkich obrazkow w kat. /assets -->
+  <!-- START Zliczanie wszystkich obrazków w kat. /assets -->
   {% assign total_count = 0 %}
-    {% for file in site.static_files %}
-      {% if file.path contains '/assets/avatars/' %}
-        {% assign total_count = total_count | plus: 1 %}
-      {% endif %}
+  {% for file in site.static_files %}
+    {% if file.path contains '/assets/avatars/' %}
+      {% assign total_count = total_count | plus: 1 %}
+    {% endif %}
   {% endfor %}
-  <!-- END Zliczanie wszystkich obrazkow w kat. /assets -->
+  <!-- END Zliczanie wszystkich obrazków w kat. /assets -->
 
   <!-- START LEFT SIDEBAR -->
   <div class="col-2">
@@ -22,45 +22,11 @@ title:  'Illustrations'
     <!-- START Sidebar Categories -->
     <div class="d-flex align-items-center mb-3">
       <h6 class="mb-0">Categories </h6>
-      <small class="text-secondary ms-auto align-self-center fw-normal">{{ total_count }}</small>
+      <small class="text-secondary ms-auto align-self-center fw-normal"></small>
     </div>
     <!-- END Sidebar Categories -->
 
     <ul class="list-unstyled">
-      {% assign categories = "" %}
-      {% for file in site.static_files %}
-        {% if file.path contains '/assets/avatars/' %}
-          {% assign path_parts = file.path | split: '/' %}
-          {% assign category_name = path_parts[3] | replace: ' ', '%20' %}
-          {% unless categories contains category_name %}
-            {% assign categories = categories | append: category_name | append: "," %}
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-      {% assign categories = categories | split: ',' | uniq %}
-
-      <!-- Generowanie linków do kotwic -->
-      {% for category in categories %}
-        {% unless category == "" %}
-          <li>
-            <a href="#{{ category | replace: '%20', '-' }}" class="link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-secondary mb-2">{{ category | replace: '%20', ' ' | capitalize }}</a>
-          </li>
-        {% endunless %}
-      {% endfor %}
-
-    </ul>
-  </div>
-  <!-- END LEFT SIDEBAR -->
-
-  <!-- START Right Content -->
-  <div class="col-10">
-
-    <h1>{{ total_count }} Illustrations for Your Design Systems and Docs</h1>
-    <p class="lead text-secondary">Free Illustrations prepared specially for documentations, frameworks, designs system etc. </p>
-
-    <hr class="mt-4 mb-5" />
-
-      <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
       {% assign categories = "" %}
       {% for file in site.static_files %}
         {% if file.path contains '/assets/avatars/' %}
@@ -72,54 +38,97 @@ title:  'Illustrations'
         {% endif %}
       {% endfor %}
       {% assign categories = categories | split: ',' | uniq %}
-  
+
+      <!-- Generowanie linków do kotwic -->
       {% for category in categories %}
         {% unless category == "" %}
+          <!-- Zliczanie plików w danej kategorii -->
+          {% assign count = 0 %}
+          {% for avatar in site.static_files %}
+            {% assign avatar_parts = avatar.path | split: '/' %}
+            {% if avatar_parts[3] == category %}
+              {% assign count = count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
 
-          <!-- START Category Header -->
-          <h4 class="my-4 fw-normal" id="{{ category | replace: '%20', '-' }}">
-            {{ category | capitalize }}
-            <small class="text-muted ms-2 fw-normal">
-              {% assign count = 0 %}
-              {% for avatar in site.static_files %}
-                {% assign avatar_parts = avatar.path | split: '/' %}
-                {% if avatar_parts[3] == category %}
-                  {% assign count = count | plus: 1 %}
-                {% endif %}
-              {% endfor %}
-              {{ count }}
-            </small>
-          </h4>
-          <!-- END Category Header -->
-  
-
-            <div class="row">
-
-              {% for avatar in site.static_files %}
-                {% assign avatar_parts = avatar.path | split: '/' %}
-                {% if avatar_parts[3] == category %}
-
-                  {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
-                  
-                  <div class="col-md-3 mb-4">
-                    <!-- START Card -->
-                    {% include card.html %}
-                    <!-- END Card -->
-                  </div>
-                  
-                  <!-- START Modal -->
-                  {% include modal.html %}
-                  <!-- END Modal -->
-
-                {% endif %}
-              {% endfor %}
-            </div>
-
+          <li>
+            <a href="#{{ category | replace: ' ', '-' }}" class="d-flex link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-secondary mb-2">
+              {{ category | capitalize }}
+              <small class="text-muted text-end ms-auto opacity-50">
+                {{ count }}
+              </small>
+            </a>
+          </li>
         {% endunless %}
       {% endfor %}
+    </ul>
+  </div>
+  <!-- END LEFT SIDEBAR -->
+
+  <!-- START RIGHT CONTENT -->
+  <div class="col-10">
+
+    <h1>{{ total_count }} Illustrations for Your Design Systems and Docs</h1>
+    <p class="lead text-secondary">Free Illustrations prepared specially for documentations, frameworks, designs system etc. </p>
+
+    <hr class="mt-4 mb-5" />
+
+    <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
+    {% assign categories = "" %}
+    {% for file in site.static_files %}
+      {% if file.path contains '/assets/avatars/' %}
+        {% assign path_parts = file.path | split: '/' %}
+        {% assign category_name = path_parts[3] %}
+        {% unless categories contains category_name %}
+          {% assign categories = categories | append: category_name | append: "," %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+    {% assign categories = categories | split: ',' | uniq %}
+
+    {% for category in categories %}
+      {% unless category == "" %}
+
+        <!-- START Category Header -->
+        <h4 class="my-4 fw-normal" id="{{ category | replace: ' ', '-' }}">
+          {{ category | capitalize }}
+          <small class="text-muted ms-2 fw-normal">
+            {% assign count = 0 %}
+            {% for avatar in site.static_files %}
+              {% assign avatar_parts = avatar.path | split: '/' %}
+              {% if avatar_parts[3] == category %}
+                {% assign count = count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {{ count }}
+          </small>
+        </h4>
+        <!-- END Category Header -->
+
+        <div class="row">
+          {% for avatar in site.static_files %}
+            {% assign avatar_parts = avatar.path | split: '/' %}
+            {% if avatar_parts[3] == category %}
+              {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
+
+              <div class="col-md-3 mb-4">
+                <!-- START Card -->
+                {% include card.html %}
+                <!-- END Card -->
+              </div>
+
+              <!-- START Modal -->
+              {% include modal.html %}
+              <!-- END Modal -->
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      {% endunless %}
+    {% endfor %}
 
   </div>
-  <!-- END Right Content -->
+  <!-- END RIGHT Content -->
 
 </div>
 <!-- END CONTENT -->
