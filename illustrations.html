@@ -125,21 +125,13 @@ title:  'Illustrations'
 
                   {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
     
-                  <!-- START Card -->
+                  
                   <div class="col-md-3 mb-4">
-                    <div class="card shadow-sm">
-                      <img src="{{ avatar.path }}" class="card-img-top h-25" alt="{{ filename | capitalize }}">
-                      <div class="card-body border-top">
-                        <h6 class="card-title mb-1">
-                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ forloop.index }}-{{ category }}" class="link-dark fw-normal">
-                            {{ filename | capitalize }}
-                          </a>
-                        </h6>
-                        <p class="card-text">Kategoria: {{ category | capitalize }}</p>
-                      </div>
-                    </div>
+                    <!-- START Card -->
+                    {% include card.html %}
+                    <!-- END Card -->
                   </div>
-                  <!-- END Card -->
+                  
     
                   {% include modal.html %}
 
