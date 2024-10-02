@@ -15,12 +15,6 @@ url:  'http://henrythemes.github.io/jekyll-bootstrap-theme'
 
 markdown: kramdown
 
-sass:
-  sass_dir: css
-  style:    expanded
-
-
-
 exclude:
 - README.md
 
