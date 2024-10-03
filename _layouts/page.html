@@ -27,8 +27,47 @@
 
 	</head>
 
-	<body class="min-vh-100 p-4  bg-light">
-		<div class="container">
+	<body class="min-vh-100 bg-light">
+		<!-- START Navbar -->
+		<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img src="{{page.root}}assets/saas-ui-logo.svg" alt="Bootstrap"  height="32">
+				  </a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" aria-current="page" href="#">
+						<div class="rounded-pill ps-3 pe-3 py-1 border border-secondary-subtle text-secondary">
+							<i class="fa fa-chevron-down me-1 small opacity-75"></i>
+							v1.0.0
+						
+						</div>
+					</a>
+				  <a class="nav-link" href="#">
+					<div class="bg-primary-subtle rounded-pill px-4 py-1 border border-primary-subtle text-primary-emphasis">
+						<i class="fa fa-down me-2"></i>
+						Download All Illustrations
+					</div>
+				  </a>
+				</div>
+			  </div>
+			  <div class="navbar-nav">
+				<a class="nav-link active" aria-current="page" href="#">Illustrations</a>
+				<a class="nav-link" href="#">Contact</a>
+				<a class="nav-link" href="#">Figma</a>
+				<div class="vr ms-3 me-3"></div>
+				<a class="nav-link" href="#">
+					<i class="fa fa-brand fa-github"></i>
+				</a>
+			  </div>
+			</div>
+		  </nav>
+		<!-- END Navbar -->
+
+		<div class="container pt-5">
 			{{ content }}
 		</div>
 
