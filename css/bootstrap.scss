@@ -53,3 +53,12 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
+
+
+.link-custom {
+    color: var(--bs-secondary) !important;
+  }
+  
+  .link-custom:hover {
+    color: var(--bs-dark) !important;
+  }
