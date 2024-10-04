@@ -18,6 +18,10 @@ markdown: kramdown
 exclude:
 - README.md
 
+sass:
+  sass_dir: css
+  style:    expanded
+
 
 safe: true
 lsi: false
