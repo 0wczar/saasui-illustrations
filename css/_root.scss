@@ -2,6 +2,46 @@
 [data-bs-theme="light"] {
   // Note: Custom variable values only support SassScript inside `#{}`.
 
+  --bs-cyan-100: #{$cyan-100};
+  --bs-cyan-200: #{$cyan-200};
+  --bs-cyan-300: #{$cyan-300};
+  --bs-cyan-400: #{$cyan-400};
+  --bs-cyan-500: #{$cyan-500};
+  --bs-cyan-600: #{$cyan-600};
+  --bs-cyan-700: #{$cyan-700};
+  --bs-cyan-800: #{$cyan-800};
+  --bs-cyan-900: #{$cyan-900};
+
+  --bs-purple-100: #{$purple-100};
+  --bs-purple-200: #{$purple-200};
+  --bs-purple-300: #{$purple-300};
+  --bs-purple-400: #{$purple-400};
+  --bs-purple-500: #{$purple-500};
+  --bs-purple-600: #{$purple-600};
+  --bs-purple-700: #{$purple-700};
+  --bs-purple-800: #{$purple-800};
+  --bs-purple-900: #{$purple-900};
+
+  --bs-blue-100: #{$blue-100};
+  --bs-blue-200: #{$blue-200};
+  --bs-blue-300: #{$blue-300};
+  --bs-blue-400: #{$blue-400};
+  --bs-blue-500: #{$blue-500};
+  --bs-blue-600: #{$blue-600};
+  --bs-blue-700: #{$blue-700};
+  --bs-blue-800: #{$blue-800};
+  --bs-blue-900: #{$blue-900};
+
+  --bs-yellow-100: #{$yellow-100};
+  --bs-yellow-200: #{$yellow-200};
+  --bs-yellow-300: #{$yellow-300};
+  --bs-yellow-400: #{$yellow-400};
+  --bs-yellow-500: #{$yellow-500};
+  --bs-yellow-600: #{$yellow-600};
+  --bs-yellow-700: #{$yellow-700};
+  --bs-yellow-800: #{$yellow-800};
+  --bs-yellow-900: #{$yellow-900};
+
   // Colors
   //
   // Generate palettes for full colors, grays, and theme colors.
