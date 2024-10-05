@@ -62,3 +62,15 @@
   .link-custom:hover {
     color: var(--bs-dark) !important;
   }
+
+  .card-custom .card-text {
+    color: var(--bs-gray-500) !important;
+  }
+  
+  .card-custom:hover {
+    border-color: var(--bs-purple-400) !important;
+  }
+
+  .card-custom:hover .card-text {
+    color: var(--bs-dark) !important;
+  }
