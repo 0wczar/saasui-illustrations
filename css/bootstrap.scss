@@ -69,6 +69,7 @@
   
   .card-custom:hover {
     border-color: var(--bs-purple-400) !important;
+    box-shadow: var(--bs-box-shadow-inset) !important;
   }
 
   .card-custom:hover .card-text {
