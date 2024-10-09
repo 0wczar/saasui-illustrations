@@ -2,13 +2,15 @@
 # site.url, site.title
 
 title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
+description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
+keywords: 'illustrations, free illustrations, UI design, design system, documentation'
+author: 'Your Name'
 
 ## note: 
 #  use site.path in your templates to make it work for both protocols e.g. http and https
 #  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
 path: /jekyll-bootstrap-theme
 url:  'http://henrythemes.github.io/jekyll-bootstrap-theme'
-
 
 ########
 # more settings
@@ -18,11 +20,39 @@ markdown: kramdown
 exclude:
 - README.md
 
-
-
 safe: true
 lsi: false
 
 collections:
   components:
     output: true
+
+# Permalinks
+permalink: /:categories/:title/
+
+# Sitemap
+plugins:
+  - jekyll-sitemap
+
+# Robots.txt
+robots: 
+  - 'User-agent: *'
+  - 'Disallow: /exclude-this-path/'
+
+# Social Media Integration
+# Open Graph
+og:
+  title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
+  description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
+  type: 'website'
+  url: 'http://henrythemes.github.io/jekyll-bootstrap-theme'
+  image: '/path-to-your-image.jpg'
+
+# Twitter Card
+twitter:
+  card: 'summary_large_image'
+  site: '@your_twitter_handle'
+  creator: '@your_twitter_handle'
+  title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
+  description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
+  image: '/path-to-your-image.jpg'
