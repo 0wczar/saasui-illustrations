@@ -3,27 +3,26 @@ layout: page
 title:  '404'
 permalink: /404.html
 ---
-<div class="d-flex flex-column text-center">
+<div class="d-flex flex-column text-center pb-5">
     
     <!-- START Logo -->
-    <div class="mb-3">
-        <a href="{{page.root}}/">
-            <img src="{{page.root}}/images/airframe-logo-only.svg">
-        </a>
-    </div>
+    <div class="fa-5x">
+        <i class="fa-duotone fa-face-pensive fa-fw" style="color: var(--bs-purple-500);"></i>
+      </div>
     <!-- END Logo -->
     
     <!-- Header with Description -->
     <div class="mb-2">
-        <small>Error 404</small>
+        <small class="text-secondary opacity-75">Error 404</small>
     </div>
-    <h4 class="mb-3">We can't find that page</h4>
-    <p class="pb-2">Sorry, the page you are looking for doesn't exist or has been moved.</p>
+    <h4 class="mb-3 fw-normal">We can't find that page</h4>
+    <p class="pb-2 text-secondary opacity-75">Sorry, the page you are looking for doesn't exist or has been moved.</p>
   
     <!-- Buttons -->
     <div class="d-grid gap-5 d-md-block">
-        <button type="button" class="btn btn-link text-decoration-none text-body px-3" onclick="goBack()"> <i class="fa-solid fa-angle-left me-1"></i> Back</button>
-        <a role="button" class="btn btn-primary px-3" href="{{page.root}}/">Take me Home</a>
+        <a role="button" class="btn btn-primary px-4 rounded-pill" href="{{page.root}}/">
+            <i class="fa fa-arrow-rotate-left me-2 opacity-50" aria-hidden="true"></i>Take me Home
+        </a>
     </div>
   
 </div>
