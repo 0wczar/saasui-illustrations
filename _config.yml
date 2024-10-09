@@ -1,7 +1,7 @@
 ###########
 # site.url, site.title
 
-title: 'Airframe'
+title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
 
 ## note: 
 #  use site.path in your templates to make it work for both protocols e.g. http and https
@@ -18,9 +18,6 @@ markdown: kramdown
 exclude:
 - README.md
 
-sass:
-  sass_dir: css
-  style:    expanded
 
 
 safe: true
