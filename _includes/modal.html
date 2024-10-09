@@ -2,7 +2,7 @@
                   <div class="modal fade" id="modal-{{ forloop.index }}-{{ category }}" tabindex="-1" aria-labelledby="modalLabel-{{ forloop.index }}-{{ category }}" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content border-0">
-                        <div class="modal-header border-bottom-0 px-4 pb-4">
+                        <div class="modal-header border-bottom-0 px-4 pb-3">
                           <h3 class="modal-title fw-normal" id="modalLabel-{{ forloop.index }}-{{ category }}">{{ filename | capitalize }}</h3>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -12,15 +12,21 @@
                           <table class="table">
                             <tbody>
                               <tr>
-                                <td class="text-secondary">Title</td>
-                                <td class="text-end fw-normal">{{ filename | capitalize }}</td>
+                                <td class="text-secondary" style="border-style: dashed;">
+                                  <span class="opacity-75">Title</span>
+                                </td>
+                                <td class="text-end fw-normal" style="border-style: dashed;">{{ filename | capitalize }}</td>
                               </tr>
                               <tr>
-                                <td class="text-secondary">Category</td>
-                                <td class="text-end fw-normal"><code class="text-secondary text-opacity-75">/{{ category | capitalize }}</code></td>
+                                <td class="text-secondary" style="border-style: dashed;">
+                                  <span class="opacity-75">Category</span>
+                                </td>
+                                <td class="text-end fw-normal" style="border-style: dashed;"><code class="text-secondary text-opacity-75">/{{ category | capitalize }}</code></td>
                               </tr>
                               <tr>
-                                <td class="text-secondary border-bottom-0">Link</td>
+                                <td class="text-secondary border-bottom-0">
+                                  <span class="opacity-75">Link</span>
+                                </td>
                                 <td class="text-end border-bottom-0">
                                   <a href="{{ avatar.path }}" download class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
                                     <i class="fa fa-circle-down me-2"></i>Download
