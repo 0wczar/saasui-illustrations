@@ -51,9 +51,9 @@ og:
 
 # Twitter Card
 twitter:
-  card: 'summary_large_image'
-  site: '@your_twitter_handle'
-  creator: '@your_twitter_handle'
+  card: '{{page.root}}assets/og/x.png'
+  site: '@towcza'
+  creator: '@towcza'
   title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
   description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
-  image: '/path-to-your-image.jpg'
+  image: '{{page.root}}/assets/og/x.png'
