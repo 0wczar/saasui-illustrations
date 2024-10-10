@@ -46,14 +46,14 @@ og:
   title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
   description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
   type: 'website'
-  url: 'http://henrythemes.github.io/jekyll-bootstrap-theme'
-  image: '{{page.root}}/assets/og/x.png'
+  url: '/assets/og/x.png'
+  image: '/assets/og/x.png'
 
 # Twitter Card
 twitter:
-  card: '{{page.root}}/assets/og/x.png'
+  card: '/assets/og/x.png'
   site: '@towcza'
   creator: '@towcza'
   title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
   description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
-  image: '{{page.root}}/assets/og/x.png'
+  image: '/assets/og/x.png'
