@@ -5,13 +5,13 @@
 title: 'SaaS UI - Free Illustrations for your Documentation or Design System'
 description: 'Free illustrations for your documentation or design system. Enhance your UI with high-quality, customizable illustrations.'
 keywords: 'illustrations, free illustrations, UI design, design system, documentation'
-author: 'Your Name'
+author: '0wczar'
 
 ## note: 
 #  use site.path in your templates to make it work for both protocols e.g. http and https
 #  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
 path: /jekyll-bootstrap-theme
-url:  'http://henrythemes.github.io/jekyll-bootstrap-theme'
+url:  'https://airframe-illustrations.vercel.app'
 
 ########
 # more settings
