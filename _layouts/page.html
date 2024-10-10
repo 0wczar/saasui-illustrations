@@ -9,7 +9,7 @@
 			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 		</script>
 		<script defer src="/_vercel/insights/script.js"></script>
-		
+
 
 		<!-- Font Awesome 6.x -->
 		<script src="https://kit.fontawesome.com/2b04deb584.js" crossorigin="anonymous"></script>
@@ -25,6 +25,13 @@
 		<meta name="msapplication-config" content="{{page.root}}/favicon/browserconfig.xml" />
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="theme-color" content="#ffffff">
+
+		  <!-- Twitter Card -->
+		  <meta name="twitter:card" content="summary_large_image">
+		  <meta name="twitter:site" content="{{ site.twitter_username }}">
+		  <meta name="twitter:title" content="{{ site.title }}">
+		  <meta name="twitter:description" content="{{ site.description }}">
+		  <meta name="twitter:image" content="{{ site.url }}/{{ site.twitter_image }}">
 
 	</head>
 
