@@ -5,14 +5,14 @@ title:  'Illustrations'
 <!-- START CONTENT -->
 <div class="row gx-5">
 
-  <!-- START Zliczanie wszystkich obrazków w kat. /assets -->
+  <!-- START Counting all images in the /assets/illustrations folder -->
   {% assign total_count = 0 %}
   {% for file in site.static_files %}
     {% if file.path contains '/assets/illustrations/' %}
       {% assign total_count = total_count | plus: 1 %}
     {% endif %}
   {% endfor %}
-  <!-- END Zliczanie wszystkich obrazków w kat. /assets -->
+  <!-- END Counting all images in the /assets/illustrations folder -->
 
   <!-- START LEFT SIDEBAR -->
   <div class="col-2">
