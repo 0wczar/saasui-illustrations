@@ -1,7 +1,7 @@
 <p align="center" width="100%">
 
 <p align="center" width="100%">
-<a href="https://airframe.vercel.app"><img src="https://github.com/user-attachments/assets/30cf664d-f961-46fa-9469-8f58919d01ce" /></a>
+<a href="https://airframe.vercel.app"><img src="https://github.com/user-attachments/assets/0332a537-d883-4e7d-8726-851db7246d04" /></a>
 </p>
 
 <h4 align="center">
@@ -16,4 +16,3 @@ Discover a vast collection of free, high-quality illustrations designed specific
 
 # Author
 tomasz.owczarczyk@gmail.com
-
