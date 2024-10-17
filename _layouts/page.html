@@ -41,36 +41,40 @@
 		  <meta name="twitter:image" content="{{page.root}}/assets/og/x.png">
 
 		  <style>
-.bd-sidebar {
-  position: sticky;
-  top: 5rem;
-  height: calc(100vh - 6rem);
-  overflow-y: auto;
-}
+      body {
+        padding-top: 56px; /* Dostosuj tę wartość do wysokości twojego navbar */
+      }
 
-.bd-links {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
+			.bd-sidebar {
+			position: sticky;
+			top: 5rem;
+			height: calc(100vh - 6rem);
+			overflow-y: auto;
+			}
 
-.bd-links .nav-link {
-  padding: .1875rem 0;
-  color: rgba(0, 0, 0, .65);
-  text-decoration: none;
-}
+			.bd-links {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			}
 
-.bd-links .nav-link:hover,
-.bd-links .nav-link:focus {
-  color: rgba(0, 0, 0, .85);
-  background-color: rgba(121, 82, 179, .1);
-}
+			.bd-links .nav-link {
+			padding: .1875rem 0;
+			color: rgba(0, 0, 0, .65);
+			text-decoration: none;
+			}
 
-@media (max-width: 767.98px) {
-  .bd-sidebar {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-}
+			.bd-links .nav-link:hover,
+			.bd-links .nav-link:focus {
+			color: rgba(0, 0, 0, .85);
+			background-color: rgba(121, 82, 179, .1);
+			}
+
+			@media (max-width: 767.98px) {
+			.bd-sidebar {
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+			}
 		</style>
 
 	</head>

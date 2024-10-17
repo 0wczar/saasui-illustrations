@@ -9,7 +9,10 @@ title:  'Illustrations'
     <div class="col-md-3 col-xl-2 d-none d-md-block bd-sidebar">
       <nav class="bd-links" id="bd-docs-nav" aria-label="Categories navigation">
         <div class="bd-toc-item">
-          <h5 class="mb-3">Categories</h5>
+
+          {% include sidebar-menu.html %}
+
+          <h6 class="mb-3 fw-normal">Categories</h6>
           <ul class="nav flex-column">
             {% assign categories = "" %}
             {% for file in site.static_files %}
@@ -34,9 +37,11 @@ title:  'Illustrations'
                 {% endfor %}
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#{{ category | replace: ' ', '-' }}">
+                  <a class="d-flex link-custom link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 mb-2 opacity-75" href="#{{ category | replace: ' ', '-' }}">
                     {{ category | capitalize }}
-                    <span class="badge bg-secondary float-end">{{ count }}</span>
+                    <small class="text-secondary text-end ms-auto opacity-75">
+                      {{ count }}
+                    </small>
                   </a>
                 </li>
               {% endunless %}
@@ -47,11 +52,7 @@ title:  'Illustrations'
     </div>
 
       <!-- START RIGHT CONTENT -->
-  <div class="col-xl-10 col-sm-12 col-md-9">
-
-    <button class="btn btn-primary d-md-none mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
-    <i class="fas fa-bars"></i> Categories
-  </button>
+  <div class="col-xl-10 col-sm-12 col-md-9 pt-5">
 
     <h1 class="mb-4 fw-normal">{{ total_count }} Illustrations<br />for Your Design Systems and Docs</h1>
     <p class="lead text-opacity-75 text-secondary">Discover a vast collection of free, high-quality illustrations designed specifically for documentation, frameworks, and design systems. Enhance your projects with our easily accessible and professionally crafted illustrations.</p>
@@ -121,14 +122,17 @@ title:  'Illustrations'
 
 <!-- Offcanvas sidebar dla mobile -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="mobileSidebarLabel">Browse docs</h5>
+  <div class="offcanvas-header border-bottom border-light-subtle">
+    <h5 class="offcanvas-title" id="mobileSidebarLabel">Categories</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <nav class="bd-links" aria-label="Categories navigation">
       <div class="bd-toc-item">
-        <h5 class="mb-3">Categories</h5>
+
+        {% include sidebar-menu.html %}
+        <h6 class="mb-4 fw-normal">Categories</h6>
+
         <ul class="nav flex-column">
           {% for category in categories %}
             {% unless category == "" %}
@@ -140,10 +144,12 @@ title:  'Illustrations'
                 {% endif %}
               {% endfor %}
 
-              <li class="nav-item">
-                <a class="nav-link offcanvas-link" href="#category-{{ category | slugify }}">
+              <li>
+                <a href="#{{ category | replace: ' ', '-' }}" class="d-flex link-custom link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 mb-2 opacity-75">
                   {{ category | capitalize }}
-                  <span class="badge bg-secondary float-end">{{ count }}</span>
+                  <small class="text-secondary text-end ms-auto opacity-75">
+                    {{ count }}
+                  </small>
                 </a>
               </li>
             {% endunless %}
