@@ -39,10 +39,10 @@ title:  'Illustrations'
       {% endfor %}
       {% assign categories = categories | split: ',' | uniq %}
 
-      <!-- Generowanie linków do kotwic -->
+      <!-- Generating anchor links -->
       {% for category in categories %}
         {% unless category == "" %}
-          <!-- Zliczanie plików w danej kategorii -->
+          <!-- Counting files in a given category -->
           {% assign count = 0 %}
           {% for avatar in site.static_files %}
             {% assign avatar_parts = avatar.path | split: '/' %}
@@ -73,7 +73,7 @@ title:  'Illustrations'
 
     <hr class="my-5 text-secondary" style="border-style: dashed;" />
 
-    <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
+    <!-- Retrieving directories (categories) from the main directory /assets/avatars/ -->
     {% assign categories = "" %}
     {% for file in site.static_files %}
       {% if file.path contains '/assets/illustrations/' %}
