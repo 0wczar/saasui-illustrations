@@ -1,32 +1,52 @@
-		<!-- START Navbar -->
-		<nav class="navbar navbar-expand-lg bg-white border-bottom border-light-subtle px-2">
-			<div class="container">
-				<a class="navbar-brand" href="{{page.root}}/">
-					<img src="{{page.root}}assets/saas-ui-logo.svg" alt="Saas UI Logo"  height="32">
-				  </a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-text pe-2">
-						<div class="rounded-pill ps-3 pe-3 py-1 border border-secondary-subtle text-secondary fw-normal" style="border-style: dashed !important; font-size: 13px;">
-							<samp class="opacity-75">v1.0</samp>
-						</div>
-				</div>
-				<a class="btn btn-primary btn-sm rounded-pill ps-3 pe-4" style=" font-size: 13px;" href="https://github.com/0wczar/saasui-illustrations/raw/refs/heads/illustrations/assets/illustrations.zip" download>
-					<i class="fa fa-down me-2 opacity-50"></i>
-					Download All Illustrations
-				</a>
-			  </div>
-			  <div class="navbar-nav">
-				<a class="nav-link active" aria-current="page" href="/">Illustrations</a>
-				<a class="nav-link opacity-75" href="https://tomaszo.dribbble.com" target="_blank">Contact</a>
-				<a class="nav-link opacity-75" href="https://www.figma.com/community/file/1369627302822996190/framework-illustrations" target="_blank">Figma</a>
-				<div class="vr ms-3 me-3 bg-dark bg-opacity-50"></div>
-				<a class="nav-link text-dark" href="https://github.com/0wczar/saasui-illustrations" target="_blank">
-					<i class="fa fa-brand fa-lg fa-github"></i>
-				</a>
+<!-- START Navbar -->
+<nav class="navbar navbar-expand-md bg-white border-bottom border-light-subtle px-2">
+	<div class="container">
+	  <!-- Categories button - po lewej stronie, taki sam jak hamburger menu -->
+	  <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+  
+	  <!-- Logo SaasUI na środku -->
+	  <a class="navbar-brand mx-auto d-flex align-items-center" href="{{page.root}}/">
+		<img src="{{page.root}}assets/saas-ui-logo.svg" alt="Saas UI Logo" height="24">
+	  </a>
+  
+	  <!-- Przycisk menu dla mobilnych urządzeń -->
+	  <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+  
+	  <div class="collapse navbar-collapse" id="navbarContent">
+		<ul class="navbar-nav ms-auto mb-2 mb-md-0 align-items-center">
+		  <li class="nav-item d-none d-md-block">
+			<div class="navbar-text pe-2">
+			  <div class="rounded-pill ps-3 pe-3 py-1 border border-secondary-subtle text-secondary fw-normal" style="border-style: dashed !important; font-size: 13px;">
+				<samp class="opacity-75">v1.0</samp>
 			  </div>
 			</div>
-		  </nav>
-		<!-- END Navbar -->
+		  </li>
+		  <li class="nav-item d-none d-md-block">
+			<a class="btn btn-primary btn-sm rounded-pill ps-3 pe-4 me-3" style="font-size: 13px;" href="https://github.com/0wczar/saasui-illustrations/raw/refs/heads/illustrations/assets/illustrations.zip" download>
+			  <i class="fa fa-down me-2 opacity-50"></i>
+			  Download All Illustrations
+			</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="/">Illustrations</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link opacity-75" href="https://tomaszo.dribbble.com" target="_blank">Contact</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link opacity-75" href="https://www.figma.com/community/file/1369627302822996190/framework-illustrations" target="_blank">Figma</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-dark" href="https://github.com/0wczar/saasui-illustrations" target="_blank">
+			  <i class="fa fa-brand fa-lg fa-github"></i>
+			</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+  <!-- END Navbar -->

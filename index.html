@@ -3,77 +3,62 @@ layout: page
 title:  'Illustrations'
 ---
 <!-- START CONTENT -->
-<div class="row gx-5">
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar dla desktop -->
+    <div class="col-md-3 col-xl-2 d-none d-md-block bd-sidebar">
+      <nav class="bd-links" id="bd-docs-nav" aria-label="Categories navigation">
+        <div class="bd-toc-item">
+          <h5 class="mb-3">Categories</h5>
+          <ul class="nav flex-column">
+            {% assign categories = "" %}
+            {% for file in site.static_files %}
+              {% if file.path contains '/assets/illustrations/' %}
+                {% assign path_parts = file.path | split: '/' %}
+                {% assign category_name = path_parts[3] %}
+                {% unless categories contains category_name %}
+                  {% assign categories = categories | append: category_name | append: "," %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+            {% assign categories = categories | split: ',' | uniq %}
 
-  <!-- START Counting all images in the /assets/illustrations folder -->
-  {% assign total_count = 0 %}
-  {% for file in site.static_files %}
-    {% if file.path contains '/assets/illustrations/' %}
-      {% assign total_count = total_count | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-  <!-- END Counting all images in the /assets/illustrations folder -->
+            {% for category in categories %}
+              {% unless category == "" %}
+                {% assign count = 0 %}
+                {% for avatar in site.static_files %}
+                  {% assign avatar_parts = avatar.path | split: '/' %}
+                  {% if avatar_parts[3] == category %}
+                    {% assign count = count | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
 
-  <!-- START LEFT SIDEBAR -->
-  <div class="col-2">
-
-    {% include sidebar-menu.html %}
-
-    <!-- START Sidebar Categories -->
-    <div class="d-flex align-items-center mb-3">
-      <h6 class="mb-0 fw-normal">Categories </h6>
-      <small class="text-secondary ms-auto align-self-center fw-normal"></small>
+                <li class="nav-item">
+                  <a class="nav-link" href="#{{ category | replace: ' ', '-' }}">
+                    {{ category | capitalize }}
+                    <span class="badge bg-secondary float-end">{{ count }}</span>
+                  </a>
+                </li>
+              {% endunless %}
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
     </div>
-    <!-- END Sidebar Categories -->
 
-    <ul class="list-unstyled">
-      {% assign categories = "" %}
-      {% for file in site.static_files %}
-        {% if file.path contains '/assets/illustrations/' %}
-          {% assign path_parts = file.path | split: '/' %}
-          {% assign category_name = path_parts[3] %}
-          {% unless categories contains category_name %}
-            {% assign categories = categories | append: category_name | append: "," %}
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-      {% assign categories = categories | split: ',' | uniq %}
+      <!-- START RIGHT CONTENT -->
+  <div class="col-xl-10 col-sm-12 col-md-9">
 
-      <!-- Generating anchor links -->
-      {% for category in categories %}
-        {% unless category == "" %}
-          <!-- Counting files in a given category -->
-          {% assign count = 0 %}
-          {% for avatar in site.static_files %}
-            {% assign avatar_parts = avatar.path | split: '/' %}
-            {% if avatar_parts[3] == category %}
-              {% assign count = count | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-
-          <li>
-            <a href="#{{ category | replace: ' ', '-' }}" class="d-flex link-custom link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 mb-2 opacity-75">
-              {{ category | capitalize }}
-              <small class="text-secondary text-end ms-auto opacity-75">
-                {{ count }}
-              </small>
-            </a>
-          </li>
-        {% endunless %}
-      {% endfor %}
-    </ul>
-  </div>
-  <!-- END LEFT SIDEBAR -->
-
-  <!-- START RIGHT CONTENT -->
-  <div class="col-10">
+    <button class="btn btn-primary d-md-none mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+    <i class="fas fa-bars"></i> Categories
+  </button>
 
     <h1 class="mb-4 fw-normal">{{ total_count }} Illustrations<br />for Your Design Systems and Docs</h1>
     <p class="lead text-opacity-75 text-secondary">Discover a vast collection of free, high-quality illustrations designed specifically for documentation, frameworks, and design systems. Enhance your projects with our easily accessible and professionally crafted illustrations.</p>
 
     <hr class="my-5 text-secondary" style="border-style: dashed;" />
 
-    <!-- Retrieving directories (categories) from the main directory /assets/avatars/ -->
+    <!-- Pobieranie katalogów (kategorii) z katalogu głównego /assets/avatars/ -->
     {% assign categories = "" %}
     {% for file in site.static_files %}
       {% if file.path contains '/assets/illustrations/' %}
@@ -130,5 +115,86 @@ title:  'Illustrations'
   </div>
   <!-- END RIGHT Content -->
 
+  </div>
 </div>
 <!-- END CONTENT -->
+
+<!-- Offcanvas sidebar dla mobile -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileSidebarLabel">Browse docs</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="bd-links" aria-label="Categories navigation">
+      <div class="bd-toc-item">
+        <h5 class="mb-3">Categories</h5>
+        <ul class="nav flex-column">
+          {% for category in categories %}
+            {% unless category == "" %}
+              {% assign count = 0 %}
+              {% for avatar in site.static_files %}
+                {% assign avatar_parts = avatar.path | split: '/' %}
+                {% if avatar_parts[3] == category %}
+                  {% assign count = count | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+
+              <li class="nav-item">
+                <a class="nav-link offcanvas-link" href="#category-{{ category | slugify }}">
+                  {{ category | capitalize }}
+                  <span class="badge bg-secondary float-end">{{ count }}</span>
+                </a>
+              </li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Funkcja do płynnego przewijania
+  function smoothScroll(target) {
+    const element = document.querySelector(target);
+    if (element) {
+    window.scrollTo({
+      top: element.offsetTop - 20, // Dodajemy małe przesunięcie
+      behavior: 'smooth'
+    });
+    }
+  }
+
+  // Obsługa linków w desktopowym sidebarze
+  document.querySelectorAll('.bd-sidebar .nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+    e.preventDefault();
+    smoothScroll(this.getAttribute('href'));
+    });
+  });
+
+  // Obsługa linków w offcanvas menu
+  const offcanvasElement = document.getElementById('mobileSidebar');
+  const bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+  offcanvasElement.addEventListener('hide.bs.offcanvas', function () {
+    const activeLink = this.querySelector('.offcanvas-link.active');
+    if (activeLink) {
+      setTimeout(() => {
+        smoothScroll(activeLink.getAttribute('href'));
+      }, 300);
+    }
+  });
+
+  document.querySelectorAll('.offcanvas-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelectorAll('.offcanvas-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    bsOffcanvas.hide();
+    });
+  });
+  });
+</script>
