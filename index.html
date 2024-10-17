@@ -4,7 +4,7 @@ title:  'Illustrations'
 ---
 <!-- START CONTENT -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row gx-5">
     <!-- Sidebar dla desktop -->
     <div class="col-md-3 col-xl-2 d-none d-md-block bd-sidebar">
       <nav class="bd-links" id="bd-docs-nav" aria-label="Categories navigation">
@@ -96,7 +96,7 @@ title:  'Illustrations'
             {% if avatar_parts[3] == category %}
               {% assign filename = avatar.path | split: '/' | last | split: '.' | first %}
 
-              <div class="col-md-3 mb-4">
+              <div class="col-md-6 col-xl-4 col-lg-6 col-xxl-3 mb-4">
                 <!-- START Card -->
                 {% include card.html %}
                 <!-- END Card -->
