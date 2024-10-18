@@ -11,7 +11,7 @@ author: '0wczar'
 #  use site.path in your templates to make it work for both protocols e.g. http and https
 #  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
 path: /jekyll-bootstrap-theme
-url:  'https://airframe-illustrations.vercel.app'
+url:  'https://illustrations.saas-ui.dev'
 
 ########
 # more settings
